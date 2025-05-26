@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>XV Abigail Rendón</title>
+<style>
+        body {
+            margin: 0;
+            font-family: 'Georgia', serif;
+            background: #fffafc;
+            color: #3b0a32;
+            text-align: center;
+        }
+        header {
+            background: linear-gradient(to right, #f8b5d4, #ffd6e7);
+            padding: 2em 1em;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin: 0.2em 0;
+        }
+        .section {
+            padding: 2em 1em;
+        }
+        .dress-code {
+            background-color: #ffeef6;
+            border: 2px solid #f8b5d4;
+            border-radius: 15px;
+            margin: 2em auto;
+            max-width: 600px;
+        }
+        .map iframe {
+            width: 100%;
+            height: 300px;
+            border: none;
+        }
+        .countdown {
+            font-size: 1.5em;
+            margin-top: 1em;
+        }
+        a.whatsapp-button {
+            display: inline-block;
+            margin-top: 2em;
+            padding: 1em 2em;
+            background-color: #25d366;
+            color: white;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        footer {
+            margin: 2em 0;
+            font-style: italic;
+        }
+    
+body {
+    background-image: url('https://cdn.pixabay.com/photo/2017/01/04/18/40/roses-1953273_1280.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    backdrop-filter: brightness(0.95);
+}
+
+.section, header, footer {
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 10px;
+    margin: 1em auto;
+    padding: 1.5em;
+    max-width: 800px;
+}
+</style>
+</head>
+<body>
+<header>
+<h1>XV Años de Abigail Rendón</h1>
+<p>14 de junio de 2025 - 6:00 PM</p>
+<p>C. Jaguares 1016, 64103 Monterrey, N.L.</p>
+</header>
+<div class="section">
+<h2>✨ Frase especial ✨</h2>
+<p><em>“En esta noche mágica, florece un sueño de niña que se convierte en mujer.”</em></p>
+</div>
+<div class="section countdown">
+    ⏳ Falta: <span id="timer"></span>
+</div>
+<div class="section dress-code">
+<h3>👗 Código de Vestimenta</h3>
+<p>Formal</p>
+<p style="color: red;">El color rojo está reservado para la quinceañera.</p>
+</div>
+<div class="section map">
+<h2>📍 Ubicación</h2>
+<iframe src="https://www.google.com/maps?q=C.+Jaguares+1016,+64103+Monterrey,+N.L.&amp;output=embed"></iframe>
+</div>
+<div class="section">
+<h2>📲 Confirmar Asistencia</h2>
+<a class="whatsapp-button" href="https://wa.me/528113839333?text=Hola!+Confirmo+mi+asistencia+a+los+XV+de+Abigail" target="_blank">Confirmar por WhatsApp</a>
+</div>
+<footer>
+    Gracias por acompañarme 💖
+</footer>
+<script>
+    // Cuenta regresiva
+    const countDownDate = new Date("2025-06-14T18:00:00").getTime();
+
+    const countdownfunction = setInterval(function() {
+        const now = new Date().getTime();
+        const distance = countDownDate - now;
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("timer").innerHTML = days + "d " + hours + "h "
+        + minutes + "m " + seconds + "s ";
+
+        if (distance < 0) {
+            clearInterval(countdownfunction);
+            document.getElementById("timer").innerHTML = "¡Ya comenzó la fiesta!";
+        }
+    }, 1000);
+</script>
+</body>
+</html>
