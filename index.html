@@ -1,119 +1,127 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>XV Abigail Rendón</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Georgia', serif;
-            background: #fffafc;
-            color: #3b0a32;
-            text-align: center;
-        }
-        header {
-            background: linear-gradient(to right, #f8b5d4, #ffd6e7);
-            padding: 2em 1em;
-        }
-        h1 {
-            font-size: 2.5em;
-            margin: 0.2em 0;
-        }
-        .section {
-            padding: 2em 1em;
-        }
-        .dress-code {
-            background-color: #ffeef6;
-            border: 2px solid #f8b5d4;
-            border-radius: 15px;
-            margin: 2em auto;
-            max-width: 600px;
-        }
-        .map iframe {
-            width: 100%;
-            height: 300px;
-            border: none;
-        }
-        .countdown {
-            font-size: 1.5em;
-            margin-top: 1em;
-        }
-        a.whatsapp-button {
-            display: inline-block;
-            margin-top: 2em;
-            padding: 1em 2em;
-            background-color: #25d366;
-            color: white;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        footer {
-            margin: 2em 0;
-            font-style: italic;
-        }
-    </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>XV de Abigail Rendón</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat&display=swap');
+  body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background-image: url('https://cdn.pixabay.com/photo/2017/01/04/18/40/roses-1953273_1280.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #3b0a0a;
+  }
+  .overlay {
+    background: rgba(255, 255, 255, 0.85);
+    min-height: 100vh;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3.5rem;
+    margin-bottom: 0;
+    color: #b70000;
+  }
+  h2 {
+    font-weight: 400;
+    margin-top: 0;
+    font-size: 1.8rem;
+    color: #6b0000;
+  }
+  p {
+    font-size: 1.1rem;
+    margin: 0.5rem 0;
+  }
+  .countdown {
+    font-size: 2rem;
+    margin: 1rem 0 2rem;
+    color: #a10000;
+    font-weight: 600;
+  }
+  .dress-code {
+    background: #b70000;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 30px;
+    font-weight: 700;
+    margin: 1rem 0 2rem;
+    display: inline-block;
+  }
+  a.whatsapp {
+    display: inline-block;
+    margin-top: 2rem;
+    background: #25d366;
+    color: white;
+    text-decoration: none;
+    padding: 0.8rem 1.2rem;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 1.1rem;
+  }
+  a.whatsapp:hover {
+    background: #1ebe57;
+  }
+  footer {
+    margin-top: auto;
+    font-size: 0.9rem;
+    color: #6b0000;
+  }
+</style>
 </head>
 <body>
-
-<header>
-    <h1>XV Años de Abigail Rendón</h1>
-    <p>14 de junio de 2025 - 6:00 PM</p>
-    <p>C. Jaguares 1016, 64103 Monterrey, N.L.</p>
-</header>
-
-<div class="section">
-    <h2>✨ Frase especial ✨</h2>
-    <p><em>“En esta noche mágica, florece un sueño de niña que se convierte en mujer.”</em></p>
+<div class="overlay">
+  <h1>Abigail Rendón</h1>
+  <h2>Te invita a celebrar sus XV años</h2>
+  <p><strong>Fecha:</strong> 14 de junio</p>
+  <p><strong>Hora:</strong> 6:00 PM</p>
+  
+  <div class="countdown" id="countdown">Cargando cuenta regresiva...</div>
+  
+  <div class="dress-code">Código de vestimenta: Formal (Rojo reservado para la quinceañera)</div>
+  
+  <p>La fiesta se llevará a cabo en:</p>
+  <p><strong>C. Jaguares 1016, 64103 Monterrey, N.L.</strong></p>
+  
+  <p>Confirma tu asistencia por WhatsApp:</p>
+  <a class="whatsapp" href="https://wa.me/8113839333" target="_blank">Enviar WhatsApp</a>
+  
+  <footer>¡Esperamos verte y compartir una noche inolvidable!</footer>
 </div>
-
-<div class="section countdown">
-    ⏳ Falta: <span id="timer"></span>
-</div>
-
-<div class="section dress-code">
-    <h3>👗 Código de Vestimenta</h3>
-    <p>Formal</p>
-    <p style="color: red;">El color rojo está reservado para la quinceañera.</p>
-</div>
-
-<div class="section map">
-    <h2>📍 Ubicación</h2>
-    <iframe src="https://www.google.com/maps?q=C.+Jaguares+1016,+64103+Monterrey,+N.L.&output=embed"></iframe>
-</div>
-
-<div class="section">
-    <h2>📲 Confirmar Asistencia</h2>
-    <a class="whatsapp-button" href="https://wa.me/528113839333?text=Hola!+Confirmo+mi+asistencia+a+los+XV+de+Abigail" target="_blank">Confirmar por WhatsApp</a>
-</div>
-
-<footer>
-    Gracias por acompañarme 💖
-</footer>
 
 <script>
-    // Cuenta regresiva
-    const countDownDate = new Date("2025-06-14T18:00:00").getTime();
+  // Cuenta regresiva
+  const countdownElement = document.getElementById('countdown');
+  const eventDate = new Date('2025-06-14T18:00:00');
 
-    const countdownfunction = setInterval(function() {
-        const now = new Date().getTime();
-        const distance = countDownDate - now;
+  function updateCountdown() {
+    const now = new Date();
+    const diff = eventDate - now;
 
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    if (diff <= 0) {
+      countdownElement.textContent = "¡La fiesta ha comenzado!";
+      clearInterval(interval);
+      return;
+    }
 
-        document.getElementById("timer").innerHTML = days + "d " + hours + "h "
-        + minutes + "m " + seconds + "s ";
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((diff / (1000 * 60)) % 60);
+    const seconds = Math.floor((diff / 1000) % 60);
 
-        if (distance < 0) {
-            clearInterval(countdownfunction);
-            document.getElementById("timer").innerHTML = "¡Ya comenzó la fiesta!";
-        }
-    }, 1000);
+    countdownElement.textContent = 
+      `${days}d ${hours}h ${minutes}m ${seconds}s para comenzar`;
+  }
+
+  updateCountdown();
+  const interval = setInterval(updateCountdown, 1000);
 </script>
 
 </body>
