@@ -253,6 +253,22 @@
   </div>
 
   <script>
+     document.addEventListener('DOMContentLoaded', () => {
+      const container = document.querySelector('.container');
+      const scrollSpeed = 1; // píxeles por paso
+      const scrollInterval = 40; // ms entre scrolls
+
+      const intervalId = setInterval(() => {
+        // Revisar si se puede bajar más (scroll no está al fondo)
+        if (container.scrollTop + container.clientHeight >= container.scrollHeight) {
+          clearInterval(intervalId); // Detener scroll al llegar al fondo
+          return;
+        }
+        container.scrollTop += scrollSpeed; // Baja poco a poco
+      }, scrollInterval);
+    });
+
+
     const countdownEl = document.getElementById('countdown');
     const eventDate = new Date('2025-08-29T19:30:00');
 
@@ -280,3 +296,4 @@
 
 </body>
 </html>
+
