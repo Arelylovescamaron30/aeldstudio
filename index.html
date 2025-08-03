@@ -2,51 +2,256 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Arely Studio - Invitaciones Digitales</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>XV de Abigail Rendón</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;700&display=swap');
+
+    * { box-sizing: border-box; }
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Montserrat', sans-serif;
+      background: url('fondo-p.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #6b0000;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(-20px);
+      animation: fadeIn 2s ease-out forwards;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .container {
+      max-width: 750px;
+      margin: 0.5rem auto;
+      padding: 2rem;
+      background: rgba(255, 255, 255, 0.75);
+      border-radius: 20px;
+      box-shadow: 0 12px 30px rgba(183, 0, 0, 0.4);
+      position: relative;
+      z-index: 1;
+      backdrop-filter: saturate(150%) blur(1px);
+    }
+
+    h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 4rem;
+      color: #a00000;
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    h3 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 2.4rem;
+      color: #a00000;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .section-container {
+      background: rgba(255, 255, 255, 0.65);
+      border-radius: 20px;
+      padding: 1.5rem;
+      margin: 2rem 0;
+      box-shadow: 0 8px 15px rgba(183, 0, 0, 0.15);
+      backdrop-filter: saturate(180%) blur(6px);
+    }
+
+    p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      text-align: center;
+      margin: 0.5rem 0;
+    }
+
+    .italic { font-style: italic; }
+    .bold { font-weight: bold; }
+
+    .dress-code {
+      background: #a00000;
+      color: white;
+      padding: 1rem;
+      border-radius: 15px;
+      margin: 1rem auto;
+      font-weight: bold;
+      max-width: 300px;
+      text-align: center;
+    }
+
+    .countdown {
+      font-size: 1.8rem;
+      color: #900000;
+      font-weight: bold;
+      margin: 1rem 0;
+      text-align: center;
+    }
+
+    .map-container {
+      width: 100%;
+      height: 300px;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 6px 15px rgb(183 0 0 / 0.3);
+      margin-top: 1rem;
+    }
+
+    a.button {
+      display: block;
+      background: #25d366;
+      color: white;
+      padding: 1rem 2rem;
+      margin: 1.5rem auto 0;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1rem;
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(37, 211, 102, 0.7);
+      transition: 0.3s;
+      max-width: 300px;
+    }
+
+    a.button:hover {
+      background: #1ebe57;
+    }
+
+    footer {
+      margin-top: 3rem;
+      font-size: 1rem;
+      font-style: italic;
+      text-align: center;
+    }
+
+    /* PNG decorativos flotantes */
+    .flower {
+      position: fixed;
+      width: 120px;
+      z-index: 5;
+      pointer-events: none;
+      opacity: 0.9;
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .flower-top-left { top: 0; left: 0; transform: rotate(0deg); }
+    .flower-top-right { top: 0; right: 0; transform: rotate(90deg); }
+    .flower-bottom-left { bottom: 0; left: 0; transform: rotate(-90deg); }
+    .flower-bottom-right { bottom: 0; right: 0; transform: rotate(180deg); }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-10px) rotate(2deg); }
+    }
+
+    .photo-name {
+      font-family: 'Great Vibes', cursive;
+      font-size: 2.8rem;
+      color: #a00000;
+      text-align: center;
+      margin-top: 0.8rem;
+      margin-bottom: 2rem;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <h1>✨ Aeld Studio</h1>
-    <p>Invitaciones digitales para tus momentos más especiales</p>
-  </header>
 
-  <section class="galeria">
-    <h2>🎨 Portafolio</h2>
-    <div class="cards">
-      <div class="card">
-        <img src="XV-ABBY/Inicio-1.png" alt="XV Abi" />
-        <h3>XV de Abi</h3>
-        <a href="/XV-ABBY/" target="_blank">Ver invitación</a>
-      </div>
-      <div class="card">
-        <img src="assets/boda1.png" alt="Boda Luis y Ana" />
-        <h3>Boda Luis & Ana</h3>
-        <a href="/boda-luis-y-ana/" target="_blank">Ver invitación</a>
-      </div>
-      <!-- Agrega más invitaciones aquí -->
+  <!-- PNG decorativos flotantes -->
+  <img src="https://raw.githubusercontent.com/Arelylovescamaron30/XVdeAbigail/main/Inicio%20(768%20x%201366%20px)%20(1).png" class="flower flower-top-left" alt="Flor decorativa">
+  <img src="https://raw.githubusercontent.com/Arelylovescamaron30/XVdeAbigail/main/Inicio%20(768%20x%201366%20px)%20(1).png" class="flower flower-top-right" alt="Flor decorativa">  
+  <img src="https://raw.githubusercontent.com/Arelylovescamaron30/XVdeAbigail/main/Inicio%20(768%20x%201366%20px)%20(1).png" class="flower flower-bottom-left" alt="Flor decorativa">
+  <img src="https://raw.githubusercontent.com/Arelylovescamaron30/XVdeAbigail/main/Inicio%20(768%20x%201366%20px)%20(1).png" class="flower flower-bottom-right" alt="Flor decorativa">
+
+  <!-- Tarjeta principal -->
+  <div class="container">
+    <img src="https://raw.githubusercontent.com/Arelylovescamaron30/XVdeAbigail/main/Inicio%20(768%20x%201366%20px).png" alt="Inicio Abigail" style="width: 100%; border-radius: 20px; margin-bottom: 1.5rem;" class="fade-in" />
+    
+    <div class="photo-name fade-in">Angelica Abigail Rendon Dominguez</div>
+
+    <div class="section-container">
+      <p class="italic">“Acuérdate de tu Creador en los días de tu juventud, antes que vengan los días malos, y lleguen los años de los cuales digas: No tengo en ellos contentamiento”</p>
     </div>
-  </section>
 
-  <section class="servicios">
-    <h2>💡 ¿Qué incluye?</h2>
-    <ul>
-      <li>🎵 Música personalizada</li>
-      <li>📍 Mapa de ubicación</li>
-      <li>📸 Galería de fotos</li>
-      <li>✅ Confirmación de asistencia</li>
-      <li>🖨️ Código QR para imprimir</li>
-    </ul>
-  </section>
+    <div class="section-container">
+      <h3>Mis Padres</h3>
+      <p>Nancy Dominguez y Carlos Rendon</p>
+      <p>Les complace invitarte a formar parte de este evento que se celebrará el día...</p>
+      <p><strong>14 de junio de 2025</strong> a las <strong>6:00 PM</strong></p>
+      <div class="countdown" id="countdown">Cargando cuenta regresiva...</div>
+    </div>
 
-  <section class="contacto">
-    <h2>📞 Cotiza tu invitación</h2>
-    <a href="https://wa.me/521XXXXXXXXXX?text=Hola%20Arely%2C%20quiero%20una%20invitaci%C3%B3n%20digital" target="_blank" class="btn">Escríbeme por WhatsApp</a>
-  </section>
+    <div class="section-container">
+      <h3>Recepción</h3>
+      <p><strong>Quinta Jaguares</strong></p>
+      <p class="italic">C. Jaguares 1016, 64103 Monterrey, N.L.</p>
+      <div class="map-container">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3608.1234567890123!2d-100.3245678901234!3d25.6543210987654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86629ad8a38c8c7f%3A0xabcde1234567890!2sC.%20Jaguares%201016%2C%20Monterrey%2C%20NL!5e0!3m2!1ses!2smx!4v1670000000000!5m2!1ses!2smx"
+          width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
 
-  <footer>
-    <p>© 2025 Aeld Studio · Arely Luevano</p>
-  </footer>
+    <div class="section-container">
+      <h3>Vestimenta</h3>
+      <div class="dress-code">Formal</div>
+      <div class="dress-code">⚠️Color Rojo Reservado Para La Quinceañera⚠️</div>
+      <img
+        src="https://raw.githubusercontent.com/Arelylovescamaron30/XVdeAbigail/d15c67fd8ec2c7d636c2e6c64387c3e36f750974/silhouette-1953225_1280.png"
+        alt="Código de vestimenta"
+        style="display: block; margin: 1rem auto 0; max-width: 200px; opacity: 0.9;"
+      />
+    </div>
+
+    <div class="section-container">
+      <h3>Confirmación</h3>
+      <a href="https://wa.me/5218120370776?text=Hola%20Abigail%2C%20confirmo%20mi%20asistencia%20a%20tus%20XV%20años.%20%F0%9F%98%8A" target="_blank" class="button" rel="noopener noreferrer">
+        Confirmar asistencia por WhatsApp<br/>
+        <small style="font-weight:normal; font-size:0.9rem;">Número: +52 1 81 2037 0776</small>
+      </a>
+    </div>
+
+    <footer>
+      Abigail Rendón te agradece tu compañía y cariño.<br />
+      &copy; arelye.luevanodguez@gmail.com - Invitaciones Digitales
+    </footer>
+  </div>
+
+  <!-- Cuenta regresiva -->
+  <script>
+    const countdownEl = document.getElementById('countdown');
+    const eventDate = new Date('2025-06-14T18:00:00');
+
+    function updateCountdown() {
+      const now = new Date();
+      const diff = eventDate - now;
+
+      if (diff <= 0) {
+        countdownEl.textContent = "¡Es hoy la gran fiesta!";
+        clearInterval(intervalId);
+        return;
+      }
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+
+      countdownEl.textContent = `${days} días ${hours} hrs ${minutes} min ${seconds} seg`;
+    }
+
+    updateCountdown();
+    const intervalId = setInterval(updateCountdown, 1000);
+  </script>
+
 </body>
 </html>
