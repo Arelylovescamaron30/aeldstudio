@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>XV de Abigail Rendón</title>
+  <title>XV de Devany</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;700&display=swap');
 
@@ -13,9 +13,8 @@
       padding: 0;
       height: 100%;
       font-family: 'Montserrat', sans-serif;
-      background: url('fondo-p.jpg') no-repeat center center fixed;
-      background-size: cover;
-      color: #6b0000;
+      background: #f3e5f5; /* lila pastel */
+      color: #6a1b9a; /* lila oscuro */
     }
 
     .fade-in {
@@ -32,21 +31,24 @@
     }
 
     .container {
-      max-width: 750px;
-      margin: 0.5rem auto;
-      padding: 2rem;
-      background: rgba(255, 255, 255, 0.75);
+      width: 600px;
+      height: calc(600px * 1.7777);
+      margin: 1rem auto;
+      background: url('fondot.png') no-repeat center center;
+      background-size: contain;
       border-radius: 20px;
-      box-shadow: 0 12px 30px rgba(183, 0, 0, 0.4);
+      padding: 2rem;
+      box-shadow: 0 12px 30px rgba(106, 27, 154, 0.4); /* sombra lila */
+      color: #6a1b9a;
+      overflow-y: auto;
+      box-sizing: border-box;
       position: relative;
-      z-index: 1;
-      backdrop-filter: saturate(150%) blur(1px);
     }
 
     h1 {
       font-family: 'Great Vibes', cursive;
       font-size: 4rem;
-      color: #a00000;
+      color: #8e24aa; /* lila fuerte */
       text-align: center;
       margin-bottom: 1.5rem;
     }
@@ -54,18 +56,35 @@
     h3 {
       font-family: 'Great Vibes', cursive;
       font-size: 2.4rem;
-      color: #a00000;
+      color: #8e24aa;
       margin-bottom: 1rem;
       text-align: center;
     }
 
     .section-container {
-      background: rgba(255, 255, 255, 0.65);
+      width: 100%;
+      background: url('fondo-p.jpg') no-repeat center center;
+      background-size: 100% 100%;
       border-radius: 20px;
-      padding: 1.5rem;
+      padding: 1.5rem 2rem;
       margin: 2rem 0;
-      box-shadow: 0 8px 15px rgba(183, 0, 0, 0.15);
+      box-shadow: 0 8px 15px rgba(106, 27, 154, 0.15);
       backdrop-filter: saturate(180%) blur(6px);
+      color: #6a1b9a;
+      box-sizing: border-box;
+    }
+
+    .section-container2 {
+      width: 100%;
+      background: url('fondo-p.jpg') no-repeat center center;
+      background-size: 100% 100%;
+      border-radius: 20px;
+      padding: 5rem 5rem;
+      margin: 5rem 0;
+      box-shadow: 0 8px 15px rgba(106, 27, 154, 0.15);
+      backdrop-filter: saturate(180%) blur(6px);
+      color: #6a1b9a;
+      box-sizing: border-box;
     }
 
     p {
@@ -73,13 +92,14 @@
       line-height: 1.6;
       text-align: center;
       margin: 0.5rem 0;
+      color: #6a1b9a;
     }
 
     .italic { font-style: italic; }
     .bold { font-weight: bold; }
 
     .dress-code {
-      background: #a00000;
+      background: #8e24aa;
       color: white;
       padding: 1rem;
       border-radius: 15px;
@@ -91,7 +111,7 @@
 
     .countdown {
       font-size: 1.8rem;
-      color: #900000;
+      color: #6a1b9a;
       font-weight: bold;
       margin: 1rem 0;
       text-align: center;
@@ -102,13 +122,13 @@
       height: 300px;
       border-radius: 15px;
       overflow: hidden;
-      box-shadow: 0 6px 15px rgb(183 0 0 / 0.3);
+      box-shadow: 0 6px 15px rgba(106, 27, 154, 0.3);
       margin-top: 1rem;
     }
 
     a.button {
       display: block;
-      background: #25d366;
+      background: #7b1fa2; /* lila vibrante */
       color: white;
       padding: 1rem 2rem;
       margin: 1.5rem auto 0;
@@ -117,13 +137,13 @@
       font-weight: bold;
       font-size: 1.1rem;
       text-align: center;
-      box-shadow: 0 5px 15px rgba(37, 211, 102, 0.7);
+      box-shadow: 0 5px 15px rgba(156, 39, 176, 0.5);
       transition: 0.3s;
       max-width: 300px;
     }
 
     a.button:hover {
-      background: #1ebe57;
+      background: #9c27b0;
     }
 
     footer {
@@ -131,9 +151,9 @@
       font-size: 1rem;
       font-style: italic;
       text-align: center;
+      color: #6a1b9a;
     }
 
-    /* PNG decorativos flotantes */
     .flower {
       position: fixed;
       width: 120px;
@@ -156,7 +176,7 @@
     .photo-name {
       font-family: 'Great Vibes', cursive;
       font-size: 2.8rem;
-      color: #a00000;
+      color: #8e24aa;
       text-align: center;
       margin-top: 0.8rem;
       margin-bottom: 2rem;
@@ -165,37 +185,43 @@
 </head>
 <body>
 
-  <!-- PNG decorativos flotantes -->
-  <img src="https://raw.githubusercontent.com/Arelylovescamaron30/XVdeAbigail/main/Inicio%20(768%20x%201366%20px)%20(1).png" class="flower flower-top-left" alt="Flor decorativa">
-  <img src="https://raw.githubusercontent.com/Arelylovescamaron30/XVdeAbigail/main/Inicio%20(768%20x%201366%20px)%20(1).png" class="flower flower-top-right" alt="Flor decorativa">  
-  <img src="https://raw.githubusercontent.com/Arelylovescamaron30/XVdeAbigail/main/Inicio%20(768%20x%201366%20px)%20(1).png" class="flower flower-bottom-left" alt="Flor decorativa">
-  <img src="https://raw.githubusercontent.com/Arelylovescamaron30/XVdeAbigail/main/Inicio%20(768%20x%201366%20px)%20(1).png" class="flower flower-bottom-right" alt="Flor decorativa">
+  <img src="mariposa.png" class="flower flower-top-left" alt="Flor decorativa" />
+  <img src="mariposa.png" class="flower flower-top-right" alt="Flor decorativa" />  
+  <img src="mariposa.png" class="flower flower-bottom-left" alt="Flor decorativa" />
+  <img src="mariposa.png" class="flower flower-bottom-right" alt="Flor decorativa" />
 
-  <!-- Tarjeta principal -->
   <div class="container">
-    <img src="https://raw.githubusercontent.com/Arelylovescamaron30/XVdeAbigail/main/Inicio%20(768%20x%201366%20px).png" alt="Inicio Abigail" style="width: 100%; border-radius: 20px; margin-bottom: 1.5rem;" class="fade-in" />
-    
-    <div class="photo-name fade-in">Angelica Abigail Rendon Dominguez</div>
+    <img src="xvañera.png" alt="Inicio Devany" style="width: 100%; border-radius: 20px; margin-bottom: 1.5rem;" class="fade-in" />
+    <div style="text-align: center; margin-bottom: 2rem;">
+      <audio controls style="width: 100%; max-width: 400px;">
+        <source src="cancion.mp3" type="audio/mpeg">
+        Tu navegador no soporta el elemento de audio.
+      </audio>
+    </div>
 
-    <div class="section-container">
-      <p class="italic">“Acuérdate de tu Creador en los días de tu juventud, antes que vengan los días malos, y lleguen los años de los cuales digas: No tengo en ellos contentamiento”</p>
+    <div class="section-container2">
+      <p class="italic">“Hay momentos inolvidables que se atesoran en el corazón para siempre. Por esa razón, quiero que compartas conmigo este día tan especial.”</p>
     </div>
 
     <div class="section-container">
       <h3>Mis Padres</h3>
-      <p>Nancy Dominguez y Carlos Rendon</p>
+      <p>Mónica Márquez Cruz & Hugo Alberto Pecina Baez</p>
       <p>Les complace invitarte a formar parte de este evento que se celebrará el día...</p>
-      <p><strong>14 de junio de 2025</strong> a las <strong>6:00 PM</strong></p>
+      <p><strong>29 de agosto 2025</strong> de <strong>7:30 a 1:00</strong></p>
+    </div>
+
+    <div class="section-container2">
+      <p><strong>Quedan:</strong></p>
       <div class="countdown" id="countdown">Cargando cuenta regresiva...</div>
     </div>
 
     <div class="section-container">
       <h3>Recepción</h3>
-      <p><strong>Quinta Jaguares</strong></p>
-      <p class="italic">C. Jaguares 1016, 64103 Monterrey, N.L.</p>
+      <p><strong>Eventos Villa Real</strong></p>
+      <p class="italic">Juan Zuazua 101-A, 67100 Guadalupe, Nuevo León</p>
       <div class="map-container">
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3608.1234567890123!2d-100.3245678901234!3d25.6543210987654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86629ad8a38c8c7f%3A0xabcde1234567890!2sC.%20Jaguares%201016%2C%20Monterrey%2C%20NL!5e0!3m2!1ses!2smx!4v1670000000000!5m2!1ses!2smx"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3595.85405148087!2d-100.26440022536609!3d25.67613237740569!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8662bfffa43aad3d%3A0x13aeefd710480597!2sEVENTOS%20Villa%20Real!5e0!3m2!1ses-419!2smx!4v1754200007991!5m2!1ses-419!2smx"
           width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
@@ -204,32 +230,31 @@
     <div class="section-container">
       <h3>Vestimenta</h3>
       <div class="dress-code">Formal</div>
-      <div class="dress-code">⚠️Color Rojo Reservado Para La Quinceañera⚠️</div>
+      <div class="dress-code">⚠️Color lila Reservado Para La Quinceañera⚠️</div>
       <img
-        src="https://raw.githubusercontent.com/Arelylovescamaron30/XVdeAbigail/d15c67fd8ec2c7d636c2e6c64387c3e36f750974/silhouette-1953225_1280.png"
+        src="vestimenta.png"
         alt="Código de vestimenta"
         style="display: block; margin: 1rem auto 0; max-width: 200px; opacity: 0.9;"
       />
     </div>
 
-    <div class="section-container">
+    <div class="section-container2">
       <h3>Confirmación</h3>
-      <a href="https://wa.me/5218120370776?text=Hola%20Abigail%2C%20confirmo%20mi%20asistencia%20a%20tus%20XV%20años.%20%F0%9F%98%8A" target="_blank" class="button" rel="noopener noreferrer">
+      <a href="https://wa.me/528121568576?text=Hola%20Devany%2C%20confirmo%20mi%20asistencia%20a%20tus%20XV%20años.%20%F0%9F%98%8A" target="_blank" class="button" rel="noopener noreferrer">
         Confirmar asistencia por WhatsApp<br/>
-        <small style="font-weight:normal; font-size:0.9rem;">Número: +52 1 81 2037 0776</small>
+        <small style="font-weight:normal; font-size:0.9rem;">Número: +52 1 8121568576</small>
       </a>
     </div>
 
     <footer>
-      Abigail Rendón te agradece tu compañía y cariño.<br />
-      &copy; arelye.luevanodguez@gmail.com - Invitaciones Digitales
+      Te esperamos!.<br />
+      &copy; Miranda - Eventos
     </footer>
   </div>
 
-  <!-- Cuenta regresiva -->
   <script>
     const countdownEl = document.getElementById('countdown');
-    const eventDate = new Date('2025-06-14T18:00:00');
+    const eventDate = new Date('2025-08-29T19:30:00');
 
     function updateCountdown() {
       const now = new Date();
