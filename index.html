@@ -2,281 +2,243 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>XV de Devany</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aeld Studio | Portafolio Creativo</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;700&display=swap');
+    :root {
+      --bg-dark: #0f0f0f;
+      --text: #ffffff;
+      --accent: #ff66c4;
+      --subtle: #999;
+      --card-bg: #1a1a1a;
+      --font: 'Poppins', sans-serif;
+    }
 
-    * { box-sizing: border-box; }
-    body, html {
+    * {
       margin: 0;
       padding: 0;
-      height: 100%;
-      font-family: 'Montserrat', sans-serif;
-      background: #f3e5f5; /* lila pastel */
-      color: #6a1b9a; /* lila oscuro */
-    }
-
-    .fade-in {
-      opacity: 0;
-      transform: translateY(-20px);
-      animation: fadeIn 2s ease-out forwards;
-    }
-
-    @keyframes fadeIn {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .container {
-      width: 600px;
-      height: calc(600px * 1.7777);
-      margin: 1rem auto;
-      background: url('fondot.png') no-repeat center center;
-      background-size: contain;
-      border-radius: 20px;
-      padding: 2rem;
-      box-shadow: 0 12px 30px rgba(106, 27, 154, 0.4); /* sombra lila */
-      color: #6a1b9a;
-      overflow-y: auto;
-      box-sizing: border-box;
-      position: relative;
-    }
-
-    h1 {
-      font-family: 'Great Vibes', cursive;
-      font-size: 4rem;
-      color: #8e24aa; /* lila fuerte */
-      text-align: center;
-      margin-bottom: 1.5rem;
-    }
-
-    h3 {
-      font-family: 'Great Vibes', cursive;
-      font-size: 2.4rem;
-      color: #8e24aa;
-      margin-bottom: 1rem;
-      text-align: center;
-    }
-
-    .section-container {
-      width: 100%;
-      background: url('fondo-p.jpg') no-repeat center center;
-      background-size: 100% 100%;
-      border-radius: 20px;
-      padding: 1.5rem 2rem;
-      margin: 2rem 0;
-      box-shadow: 0 8px 15px rgba(106, 27, 154, 0.15);
-      backdrop-filter: saturate(180%) blur(6px);
-      color: #6a1b9a;
       box-sizing: border-box;
     }
 
-    .section-container2 {
-      width: 100%;
-      background: url('fondo-p.jpg') no-repeat center center;
-      background-size: 100% 100%;
-      border-radius: 20px;
-      padding: 5rem 5rem;
-      margin: 5rem 0;
-      box-shadow: 0 8px 15px rgba(106, 27, 154, 0.15);
-      backdrop-filter: saturate(180%) blur(6px);
-      color: #6a1b9a;
-      box-sizing: border-box;
+    body {
+      font-family: var(--font);
+      background: var(--bg-dark);
+      color: var(--text);
     }
 
-    p {
-      font-size: 1.2rem;
-      line-height: 1.6;
-      text-align: center;
-      margin: 0.5rem 0;
-      color: #6a1b9a;
-    }
-
-    .italic { font-style: italic; }
-    .bold { font-weight: bold; }
-
-    .dress-code {
-      background: #8e24aa;
-      color: white;
-      padding: 1rem;
-      border-radius: 15px;
-      margin: 1rem auto;
-      font-weight: bold;
-      max-width: 300px;
-      text-align: center;
-    }
-
-    .countdown {
-      font-size: 1.8rem;
-      color: #6a1b9a;
-      font-weight: bold;
-      margin: 1rem 0;
-      text-align: center;
-    }
-
-    .map-container {
-      width: 100%;
-      height: 300px;
-      border-radius: 15px;
-      overflow: hidden;
-      box-shadow: 0 6px 15px rgba(106, 27, 154, 0.3);
-      margin-top: 1rem;
-    }
-
-    a.button {
-      display: block;
-      background: #7b1fa2; /* lila vibrante */
-      color: white;
-      padding: 1rem 2rem;
-      margin: 1.5rem auto 0;
-      border-radius: 25px;
+    a {
+      color: inherit;
       text-decoration: none;
+    }
+
+    /* HERO SECTION */
+    header {
+      height: 100vh;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.6), #0f0f0f), url('https://images.unsplash.com/photo-1607082352111-1abaaa1fc891?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .hero {
+      max-width: 800px;
+      z-index: 2;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
       font-weight: bold;
-      font-size: 1.1rem;
+    }
+
+    .hero span {
+      color: var(--accent);
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin: 1rem 0 2rem;
+      color: var(--subtle);
+    }
+
+    .btn {
+      background: var(--accent);
+      color: #000;
+      padding: 1rem 2rem;
+      border-radius: 40px;
+      font-weight: bold;
+      display: inline-block;
+      transition: background 0.3s ease;
+    }
+
+    .btn:hover {
+      background: #ff40b2;
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 4rem 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .section-title {
       text-align: center;
-      box-shadow: 0 5px 15px rgba(156, 39, 176, 0.5);
-      transition: 0.3s;
-      max-width: 300px;
+      font-size: 2.5rem;
+      margin-bottom: 3rem;
     }
 
-    a.button:hover {
-      background: #9c27b0;
+    /* SERVICES */
+    .services {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
     }
 
+    .service-card {
+      background: var(--card-bg);
+      padding: 2rem;
+      border-radius: 20px;
+      width: 280px;
+      text-align: center;
+    }
+
+    .service-card h3 {
+      margin: 1rem 0 0.5rem;
+      color: var(--accent);
+    }
+
+    .service-card p {
+      color: var(--subtle);
+      font-size: 0.95rem;
+    }
+
+    /* ABOUT */
+    .about {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .about img {
+      width: 100%;
+      max-width: 500px;
+      border-radius: 20px;
+    }
+
+    .about-text {
+      flex: 1;
+      color: #ccc;
+    }
+
+    .about-text h2 {
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    /* PORTFOLIO */
+    .portfolio {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .portfolio img {
+      width: 100%;
+      border-radius: 15px;
+      transition: transform 0.3s;
+    }
+
+    .portfolio img:hover {
+      transform: scale(1.05);
+    }
+
+    /* FOOTER */
     footer {
-      margin-top: 3rem;
-      font-size: 1rem;
-      font-style: italic;
       text-align: center;
-      color: #6a1b9a;
+      padding: 2rem;
+      color: #777;
+      font-size: 0.9rem;
     }
 
-    .flower {
-      position: fixed;
-      width: 120px;
-      z-index: 5;
-      pointer-events: none;
-      opacity: 0.9;
-      animation: float 6s ease-in-out infinite;
-    }
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.2rem;
+      }
 
-    .flower-top-left { top: 0; left: 0; transform: rotate(0deg); }
-    .flower-top-right { top: 0; right: 0; transform: rotate(90deg); }
-    .flower-bottom-left { bottom: 0; left: 0; transform: rotate(-90deg); }
-    .flower-bottom-right { bottom: 0; right: 0; transform: rotate(180deg); }
+      .hero p {
+        font-size: 1rem;
+      }
 
-    @keyframes float {
-      0%, 100% { transform: translateY(0) rotate(0deg); }
-      50% { transform: translateY(-10px) rotate(2deg); }
-    }
+      .about {
+        flex-direction: column;
+      }
 
-    .photo-name {
-      font-family: 'Great Vibes', cursive;
-      font-size: 2.8rem;
-      color: #8e24aa;
-      text-align: center;
-      margin-top: 0.8rem;
-      margin-bottom: 2rem;
+      .section-title {
+        font-size: 2rem;
+      }
     }
   </style>
 </head>
 <body>
 
-  <img src="mariposa.png" class="flower flower-top-left" alt="Flor decorativa" />
-  <img src="mariposa.png" class="flower flower-top-right" alt="Flor decorativa" />  
-  <img src="mariposa.png" class="flower flower-bottom-left" alt="Flor decorativa" />
-  <img src="mariposa.png" class="flower flower-bottom-right" alt="Flor decorativa" />
-
-  <div class="container">
-    <img src="xvañera.png" alt="Inicio Devany" style="width: 100%; border-radius: 20px; margin-bottom: 1.5rem;" class="fade-in" />
-    <div style="text-align: center; margin-bottom: 2rem;">
-      <audio controls style="width: 100%; max-width: 400px;">
-        <source src="cancion.mp3" type="audio/mpeg">
-        Tu navegador no soporta el elemento de audio.
-      </audio>
+  <!-- HERO -->
+  <header>
+    <div class="hero">
+      <h1>Bienvenidos a <span>Aeld Studio</span></h1>
+      <p>Expertos en diseño digital moderno, invitaciones únicas y branding visual.</p>
+      <a href="#portafolio" class="btn">Explorar Portafolio</a>
     </div>
+  </header>
 
-    <div class="section-container2">
-      <p class="italic">“Hay momentos inolvidables que se atesoran en el corazón para siempre. Por esa razón, quiero que compartas conmigo este día tan especial.”</p>
-    </div>
-
-    <div class="section-container">
-      <h3>Mis Padres</h3>
-      <p>Mónica Márquez Cruz & Hugo Alberto Pecina Baez</p>
-      <p>Les complace invitarte a formar parte de este evento que se celebrará el día...</p>
-      <p><strong>29 de agosto 2025</strong> de <strong>7:30 a 1:00</strong></p>
-    </div>
-
-    <div class="section-container2">
-      <p><strong>Quedan:</strong></p>
-      <div class="countdown" id="countdown">Cargando cuenta regresiva...</div>
-    </div>
-
-    <div class="section-container">
-      <h3>Recepción</h3>
-      <p><strong>Eventos Villa Real</strong></p>
-      <p class="italic">Juan Zuazua 101-A, 67100 Guadalupe, Nuevo León</p>
-      <div class="map-container">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3595.85405148087!2d-100.26440022536609!3d25.67613237740569!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8662bfffa43aad3d%3A0x13aeefd710480597!2sEVENTOS%20Villa%20Real!5e0!3m2!1ses-419!2smx!4v1754200007991!5m2!1ses-419!2smx"
-          width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"></iframe>
+  <!-- SERVICES -->
+  <section>
+    <h2 class="section-title">Nuestros Servicios</h2>
+    <div class="services">
+      <div class="service-card">
+        <h3>🎨 Invitaciones Digitales</h3>
+        <p>Diseños interactivos y personalizados para todo tipo de eventos.</p>
+      </div>
+      <div class="service-card">
+        <h3>💼 Branding</h3>
+        <p>Diseño de logotipos, identidad visual y redes sociales para tu marca.</p>
+      </div>
+      <div class="service-card">
+        <h3>🖥️ UI/UX Web</h3>
+        <p>Diseño moderno y funcional para sitios web o aplicaciones móviles.</p>
       </div>
     </div>
+  </section>
 
-    <div class="section-container">
-      <h3>Vestimenta</h3>
-      <div class="dress-code">Formal</div>
-      <div class="dress-code">⚠️Color lila Reservado Para La Quinceañera⚠️</div>
-      <img
-        src="vestimenta.png"
-        alt="Código de vestimenta"
-        style="display: block; margin: 1rem auto 0; max-width: 200px; opacity: 0.9;"
-      />
+  <!-- ABOUT -->
+  <section>
+    <div class="about">
+      <img src="https://images.unsplash.com/photo-1607082349566-18735f7dd9a9?auto=format&fit=crop&w=800&q=80" alt="Sobre nosotros" />
+      <div class="about-text">
+        <h2>¿Quiénes somos?</h2>
+        <p>Somos un estudio creativo enfocado en brindar experiencias visuales únicas. En Aeld Studio combinamos estética, tecnología y emoción para conectar marcas con personas.</p>
+      </div>
     </div>
+  </section>
 
-    <div class="section-container2">
-      <h3>Confirmación</h3>
-      <a href="https://wa.me/528121568576?text=Hola%20Devany%2C%20confirmo%20mi%20asistencia%20a%20tus%20XV%20años.%20%F0%9F%98%8A" target="_blank" class="button" rel="noopener noreferrer">
-        Confirmar asistencia por WhatsApp<br/>
-        <small style="font-weight:normal; font-size:0.9rem;">Número: +52 1 8121568576</small>
-      </a>
+  <!-- PORTFOLIO -->
+  <section id="portafolio">
+    <h2 class="section-title">Portafolio</h2>
+    <div class="portfolio">
+      <img src="https://placehold.co/600x800/ff66c4/ffffff?text=XV+Digital" alt="Ejemplo 1" />
+      <img src="https://placehold.co/600x800/ffffff/000000?text=Boda+Creativa" alt="Ejemplo 2" />
+      <img src="https://placehold.co/600x800/1a1a1a/ff66c4?text=Baby+Shower" alt="Ejemplo 3" />
+      <img src="https://placehold.co/600x800/ff66c4/000?text=Evento+Premium" alt="Ejemplo 4" />
     </div>
+  </section>
 
-    <footer>
-      Te esperamos!.<br />
-      &copy; Miranda - Eventos
-    </footer>
-  </div>
-
-  <script>
-    const countdownEl = document.getElementById('countdown');
-    const eventDate = new Date('2025-08-29T19:30:00');
-
-    function updateCountdown() {
-      const now = new Date();
-      const diff = eventDate - now;
-
-      if (diff <= 0) {
-        countdownEl.textContent = "¡Es hoy la gran fiesta!";
-        clearInterval(intervalId);
-        return;
-      }
-
-      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-      const minutes = Math.floor((diff / (1000 * 60)) % 60);
-      const seconds = Math.floor((diff / 1000) % 60);
-
-      countdownEl.textContent = `${days} días ${hours} hrs ${minutes} min ${seconds} seg`;
-    }
-
-    updateCountdown();
-    const intervalId = setInterval(updateCountdown, 1000);
-  </script>
+  <!-- FOOTER -->
+  <footer>
+    © 2025 Aeld Studio · Diseño con ❤️ desde México
+  </footer>
 
 </body>
 </html>
