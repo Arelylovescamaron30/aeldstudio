@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>XV de Regina</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;700&display=swap');
+
+    * { box-sizing: border-box; }
+    
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Montserrat', sans-serif;
+      background: #F8D7DA; /* Fondo rosa palo pastel */
+      color: #8F5A63; /* Rosa palo oscuro para el texto */
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(-20px);
+      animation: fadeIn 2s ease-out forwards;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .container {
+      width: 600px;
+      height: calc(600px * 1.7777);
+      margin: 1rem auto;
+      background: url('fondot.png') no-repeat center center;
+      background-size: contain;
+      border-radius: 20px;
+      padding: 2rem;
+      box-shadow: 0 12px 30px rgba(194, 122, 133, 0.3); /* Sombra rosa oscura */
+      color: #8F5A63; /* Rosa palo oscuro */
+      overflow-y: auto;
+      box-sizing: border-box;
+      position: relative;
+    }
+
+  h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 4rem;
+  color: #D4AF37; /* Dorado elegante */
+  text-align: center;
+  margin-bottom: 1.5rem;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+h3 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.4rem;
+  color: #D4AF37; /* Dorado elegante */
+  margin-bottom: 1rem;
+  text-align: center;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+
+    .section-container, .section-container2 {
+      width: 100%;
+      background: url('fondo-p.jpg') no-repeat center center;
+      background-size: 100% 100%;
+      border-radius: 20px;
+      padding: 1.5rem 2rem;
+      margin: 2rem 0;
+      box-shadow: 0 8px 15px rgba(194, 122, 133, 0.15);
+      backdrop-filter: saturate(180%) blur(6px);
+      color: #8F5A63;
+      box-sizing: border-box;
+    }
+
+    .section-container3 {
+      width: 100%;
+      background: url('Pase.png') no-repeat center center;
+      background-size: 100% 100%;
+      border-radius: 20px;
+      padding: 1.5rem 2rem;
+      margin: 2rem 0;
+      box-shadow: 0 8px 15px rgba(194, 122, 133, 0.15);
+      backdrop-filter: saturate(180%) blur(6px);
+      color: #8F5A63;
+      box-sizing: border-box;
+    }
+
+    p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      text-align: center;
+      margin: 0.5rem 0;
+      color: #8F5A63;
+    }
+
+    .italic { font-style: italic; }
+    .bold { font-weight: bold; }
+
+    .dress-code {
+      background: #E8AEB7; /* Rosa medio */
+      color: white;
+      padding: 1rem;
+      border-radius: 15px;
+      margin: 1rem auto;
+      font-weight: bold;
+      max-width: 400px;
+      text-align: center;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    }
+
+    .countdown {
+      font-size: 1.8rem;
+      color: #C27A85; /* Rosa palo profundo */
+      font-weight: bold;
+      margin: 1rem 0;
+      text-align: center;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    }
+
+  a.button {
+  display: block;
+  background: #D4AF37; /* Dorado */
+  color: #4a235a; 
+  padding: 1rem 2rem;
+  margin: 1.5rem auto 0;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4); /* Sombra dorada */
+  transition: 0.3s;
+  max-width: 300px;
+}
+
+a.button:hover {
+  background: #b8952d; /* Dorado más oscuro al pasar el mouse */
+  transform: translateY(-2px);
+}
+
+    footer {
+      margin-top: 3rem;
+      font-size: 1rem;
+      font-style: italic;
+      text-align: center;
+      color: #8F5A63;
+    }
+
+    .flower {
+      position: fixed;
+      width: 120px;
+      z-index: 5;
+      pointer-events: none;
+      opacity: 0.9;
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .flower-top-left { top: 0; left: 0; }
+    .flower-top-right { top: 0; right: 0; transform: scaleX(-1); }
+    .flower-bottom-left { bottom: 0; left: 0; transform: scaleY(-1); }
+    .flower-bottom-right { bottom: 0; right: 0; transform: scale(-1, -1); }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+  </style>
+</head>
+<body>
+ 
+  <img src="mariposa.png" class="flower flower-top-left" alt="Decoración" />
+  <img src="mariposa.png" class="flower flower-top-right" alt="Decoración" />  
+  <img src="mariposa.png" class="flower flower-bottom-left" alt="Decoración" />
+  <img src="mariposa.png" class="flower flower-bottom-right" alt="Decoración" />
+
+  <div class="container">
+    <img src="xvañera.png" alt="Inicio Regina" style="width: 100%; border-radius: 20px; margin-bottom: 1.5rem;" class="fade-in" />
+    <div style="text-align: center; margin-bottom: 2rem;">
+      <audio id="musica" loop controls style="width: 100%; max-width: 400px;">
+        <source src="cancion.mp3" type="audio/mpeg">
+      </audio>
+    </div>
+
+        <!-- Texto principal estilo invitación clásica -->
+    <div class="section-container2">
+      <p class="italic">
+        Hoy hace quince años mis padres daban gracias a Dios por mí.  
+        Hoy doy gracias a Dios por ellos, por cuidarme, tenerme paciencia  
+        y aconsejarme. Doy gracias también a toda mi familia por hacerme  
+        especial este día. A mis amigos por enseñarme el valor de una  
+        verdadera amistad.
+      </p>
+    </div>
+    <div class="section-container2">
+      <h1>R</h1>
+      <p class="italic">
+        “Deléitate en el Señor y Él concederá los deseos de tu corazón.”
+      </p>
+    </div>
+    
+    <div class="section-container">
+      <h3>Mis padres</h3>
+      <p class="bold">Jose Guadalupe Garcia Cruz<br>&<br>Sonia de Leon Garcia</p>
+      <p>Tienen el honor de invitarlos a celebrar mis XV años que se realizarán el día:</p>
+      <p><strong>20 de Diciembre de 2025</strong></p>
+    </div>
+    
+    <div class="section-container">
+      <h3>Parroquia</h3>
+      <p><strong>5:00 p.m.</strong></p>
+      <p class="italic">Capilla San Miguel Arcángel, Zuazua #314, San Miguel de Apodaca, entre Abasolo y Allende</p>
+      <a href="https://maps.app.goo.gl/ACwXCx1t5fviRha78" target="_blank" class="button" rel="noopener noreferrer">
+        Abrir en Google Maps
+      </a>
+      
+      <h3>Recepción</h3>
+      <p><strong>8:00 p.m.</strong></p>
+      <p class="italic">Emporio Eventos , Guadalajara #428, Hacienda San Miguel, Gpe, N.L.</p>
+      <a href="https://maps.app.goo.gl/YBMRQEtfBsBpjQdN6" target="_blank" class="button" rel="noopener noreferrer">
+        Abrir en Google Maps
+      </a>
+      <p>-</p>
+    </div>
+    
+    <div class="section-container2">
+      <p><strong>Faltan:</strong></p>
+      <div class="countdown" id="countdown">Cargando...</div>
+    </div>
+
+    <div class="section-container">
+      <h3>Código de Vestimenta</h3>
+      <div class="dress-code">Formal</div>
+      <div class="dress-code">Color rosa reservado para la quinceañera</div>
+      <img
+        src="vestimenta.png"
+        alt="Código de vestimenta"
+        style="display: block; margin: 1.5rem auto 0; max-width: 200px; opacity: 0.9;"
+      />
+    </div>
+
+    <div class="section-container2">
+      <h3>Confirmación</h3>
+      <a href="https://wa.me/528132799669?text=Hola%20Regina%2C%20confirmo%20mi%20asistencia%20a%20tus%20XV%20años.%20 Soy: %20%F0%9F%98%8A" target="_blank" class="button" rel="noopener noreferrer">
+        Confirmar por WhatsApp
+        <small style="font-weight:normal; font-size:0.9rem; display: block; color: inherit;">+52 1 8132799669</small>
+      </a>
+    </div>
+
+    <footer>
+      ¡Te esperamos!<br />
+      © Miranda - Eventos
+    </footer>
+  </div>
+
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const audio = document.getElementById('musica');
+      
+      // Intenta reproducir la música
+      let playPromise = audio.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(error => {
+          console.log("La reproducción automática fue bloqueada. Se necesita interacción del usuario.");
+          // Opcional: Mostrar un botón de "Reproducir" para que el usuario inicie la música
+        });
+      }
+
+
+      const container = document.querySelector('.container');
+      const scrollSpeed = 1; 
+      const scrollInterval = 40; 
+      const intervalId = setInterval(() => {
+        if (container.scrollTop + container.clientHeight >= container.scrollHeight) {
+          clearInterval(intervalId);
+          return;
+        }
+        container.scrollTop += scrollSpeed;
+      }, scrollInterval);
+
+    });
+
+    const countdownEl = document.getElementById('countdown');
+    // La fecha del evento: Año, Mes (0-11), Día, Hora, Minuto, Segundo
+    const eventDate = new Date(2025, 11, 20, 17, 0, 0); // Noviembre es el mes 10
+
+    function updateCountdown() {
+      const now = new Date();
+      const diff = eventDate - now;
+
+      if (diff <= 0) {
+        countdownEl.textContent = "¡Es hoy la gran fiesta!";
+        if(intervalId) clearInterval(intervalId);
+        return;
+      }
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+
+      countdownEl.textContent = `${days} días ${hours} hrs ${minutes} min ${seconds} seg`;
+    }
+
+    updateCountdown();
+    const intervalId = setInterval(updateCountdown, 1000);
+  </script>
+</body>
+</html>
