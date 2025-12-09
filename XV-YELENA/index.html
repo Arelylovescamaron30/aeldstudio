@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>XV de Yelena — Invitación</title>
+
+  <!-- Tipografía cursiva elegante -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400;1,600;1,700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --crema:#F9F4FF;        /* Fondo suave lila rosado */
+  --beige:#F3E4FF;        /* Lila pastel */
+  --cafe:#7A3EA1;         /* Morado principal elegante */
+  --negro-suave:#4B1E68;  /* Morado oscuro */
+  --dorado:#E49AD6;       /* Rosa dorado suave */
+  --text: var(--cafe);
+  --fadeOffset: 80px;
+}
+
+*{box-sizing:border-box;}
+html, body{
+  height:100%; margin:0; 
+  font-family:'Playfair Display', serif; 
+  font-style:italic; 
+  color:var(--text);
+  background: url('fondo.jpg') center/cover no-repeat fixed;
+  overflow-x:hidden;
+}
+
+/* HERO */
+.hero{
+  height:100vh; width:100%;
+  position:relative;
+  display:flex; flex-direction:column;
+  align-items:center; justify-content:center;
+  text-align:center;
+  color:rgb(255, 255, 255);
+  background: center/cover no-repeat url('xvanera.jpeg');
+}
+.hero::before{
+  content:"";
+  position:absolute; inset:0;
+  background-color: #3d1eaa3b;
+}
+.hero-inner{position:relative; z-index:2; padding:1.5rem;}
+.title-large{font-size:clamp(64px,10vw,120px); margin:0; text-shadow:0 12px 30px rgba(0,0,0,0.55);}
+.subtitle{margin-top:0.8rem; font-size:clamp(22px,3vw,32px);}
+.date-pill{
+  margin-top:1rem;
+  display:inline-block;
+  background: rgba(122,62,161,0.55);
+  color:rgb(255, 255, 255);
+  border-radius:999px;
+  padding:0.6rem 1.2rem;
+  font-weight:600;
+  font-size:clamp(18px,2.5vw,24px);
+}
+
+/* BOTÓN DE AUDIO */
+.audio-btn-container{
+  margin-top:20px;
+  display: flex;
+  justify-content: center;
+}
+
+.play-btn{
+  background: rgba(228,154,214,0.85);
+  border:none;
+  border-radius:50%;
+  width:60px;
+  height:60px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  cursor:pointer;
+  transition: transform 0.2s;
+  box-shadow:0 4px 15px rgba(0,0,0,0.3);
+}
+.play-btn:hover{transform: scale(1.1);}
+.play-btn img{width:28px;height:28px;}
+
+/* SECCIONES */
+section{width:100%; padding:64px 6vw; text-align:center;}
+.container-card{
+  max-width:980px;
+  margin:0 auto;
+
+  /* 📌 ESTILO BORROSO */
+  background: rgba(255, 240, 255, 0.25);  /* Transparente rosado */
+  backdrop-filter: blur(15px);            /* BORROSO */
+  -webkit-backdrop-filter: blur(15px);    /* Safari */
+
+  padding:2.2rem;
+  border-radius:18px;
+
+  /* ✨ Borde tipo cristal */
+  border:1px solid rgba(255,255,255,0.35);
+
+  /* ✨ Sombras suaves moradas */
+  box-shadow: 
+      0 4px 12px rgba(0,0,0,0.12),
+      0 0 25px rgba(122,62,161,0.25);
+}
+h2.section-title{
+  font-size:clamp(36px,5vw,54px);
+  color:var(--cafe);
+  margin-bottom:1rem;
+}
+p.lead{font-size:1.6rem; line-height:2.0;}
+.muted{color:rgba(0,0,0,0.55); font-size:1.2rem;}
+
+/* BOTONES */
+.btn{
+  display:inline-block;
+  padding:14px 24px;
+  border-radius:999px;
+  background:linear-gradient(90deg, var(--cafe), var(--negro-suave));
+  color:rgb(255, 255, 255);
+  text-decoration:none;
+  font-weight:600;
+  font-size:1.2rem;
+  transition: transform .22s ease;
+  margin-top:0.5rem;
+}
+.btn:hover{transform:translateY(-3px);}
+.btn.secondary{
+  background:transparent;
+  color:var(--cafe);
+  border:1px solid rgba(122,62,161,0.4);
+}
+
+/* CONTADOR */
+#countdown{
+  font-size:clamp(48px,8vw,100px);
+  font-weight:700;
+  margin-top:12px;
+  animation: pulse 1.5s infinite alternate;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); color: var(--cafe);}
+  50% { transform: scale(1.05); color: var(--dorado);}
+  100% { transform: scale(1); color: var(--cafe);}
+}
+
+/* TIMELINE */
+.timeline{
+  position: relative;
+  margin: 2rem 0;
+  padding: 0;
+}
+.timeline::before{
+  content: '';
+  position: absolute;
+  top: 20px;
+  bottom: 0;
+  left: 50%;
+  width: 4px;
+  background: var(--cafe);
+  transform: translateX(-50%);
+  border-radius:2px;
+}
+
+.timeline-item{
+  position: relative;
+  width: 50%;
+  padding: 1rem 2rem;
+}
+.timeline-item.left{
+  left: 0;
+  text-align:right;
+}
+.timeline-item.right{
+  left: 50%;
+  text-align:left;
+}
+.timeline-item .icon{
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px; height: 50px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background: var(--cafe);
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+.timeline-item .icon img{
+  width: 60%; height: 60%;
+}
+.timeline-item .content{
+  background: rgba(255, 240, 255, 0.25); /* Transparencia rosada */
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+
+  border-radius:16px;
+  padding:1.2rem 1.6rem;
+
+  border:1px solid rgba(255, 255, 255, 0.35); /* borde de cristal */
+
+  box-shadow:
+      0 4px 12px rgba(0,0,0,0.12),
+      0 0 22px rgba(122, 62, 161, 0.25); /* sombras moradas */
+}
+
+@media(max-width:720px){
+  .title-large{font-size:clamp(48px,12vw,72px);}
+  .subtitle{font-size:clamp(18px,4vw,24px);}
+  section{padding:40px 6vw;}
+  p.lead{font-size:1.4rem;}
+  #countdown{font-size:clamp(36px,6vw,80px);}
+  .timeline::before{left:8px;}
+  .timeline-item{
+    width:100%;
+    padding-left:40px; padding-right:0;
+  }
+  .timeline-item.left, .timeline-item.right{text-align:left; left:0;}
+  .timeline-item .icon{left:0;}
+}
+</style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-inner">
+      <h1 class="title-large">Yelena Maria Capetillo Castillo</h1>
+      <div class="subtitle">Mis XV Años</div>
+      <div class="date-pill">24 · Enero · 2026 — 6:00 PM</div>
+
+      <!-- Botón de play debajo de la fecha -->
+      <div class="audio-btn-container">
+        <button class="play-btn" id="playBtn">
+          <img src="play.png" alt="Play" id="playIcon">
+        </button>
+        <audio id="audio" src="cancion.mp3"></audio>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- MENSAJE -->
+  <section>
+    <h2 class="section-title" style="color: black;">Tienes una invitación muy especial</h2>
+    <p>¡Solo Faltan!</p>
+    <div class="audio-container">
+      
+    <p id="countdown">Cargando…</p>
+     <img src="separador.png" alt="Detalle de la invitación" style="max-width:90%; border-radius:12px;">
+    </div>
+    <div class="container-card">
+      <p class="lead" style="font-size:1.4rem; color:var(--cafe); text-align: center;">
+        "Hoy hace 15 años mis padres daban gracias a Dios por mi, hoy doy gracias a Dios por mis padres, familia y amigos."
+      </p>
+    </div>
+  </section>
+
+  <!-- IMAGEN DESPUÉS DEL CONTADOR -->
+  <section>
+    <img src="detalle.png" alt="Detalle de la invitación" style="max-width:90%; border-radius:12px;">
+  </section>
+
+  <!-- EVENTO -->
+  <section>
+    <h2 class="section-title">Mis Padres</h2>
+    <div class="container-card">
+      <p class="lead">Ángel Omar Capetillo Ramirez <br> &amp; <br> Olga Lizzette Castillo Lopez</p>
+      <p class="muted" style="margin-top:0.6rem;font-weight:600">Tenemos el honor de invitarles a la celebración de los XV años de nuestra hija</p>
+    </div>
+  </section>
+    <section>
+    <img src="fecha.png" alt="Detalle de la invitación" style="max-width:90%; border-radius:12px;">
+  </section>
+
+  <!-- TIMELINE DE LUGARES -->
+  <section>
+    <h2 class="section-title">Ceremonia & Recepción</h2>
+    <div class="timeline">
+      <div class="timeline-item left">
+        <div class="icon"><img src="church.png" alt="Iglesia"></div>
+        <div class="content">
+          <p class="lead"><strong>Ceremonia</strong> — 6:00 p.m.<br>
+          <span class="muted">Coronación de la virgen del roble, 25 Diciembre #499, Col. El Roble, San Nicolas de los Garza, N.L.</span><br>
+          <a class="btn secondary" href="https://maps.app.goo.gl/QLS9PonWSc3J7bFy5">Ver en Google Maps</a></p>
+        </div>
+      </div>
+
+      <div class="timeline-item right">
+        <div class="icon"><img src="gift.png" alt="Recepción"></div>
+        <div class="content">
+          <p class="lead"><strong>Recepción</strong> — 8:00 p.m.<br>
+          <span class="muted">San Nicolas Eventos Ignacio Aldama #508, Centro de San Nicolas, N.L.</span><br>
+          <a class="btn secondary" href="https://maps.app.goo.gl/4LXSwdbenBG65T3G6">Ver en Google Maps</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VESTIMENTA -->
+  <section>
+    <h2 class="section-title">Código de Vestimenta</h2>
+    <div class="container-card">
+      <p class="lead"><strong>Formal</strong></p>
+      <img src="vestimenta.png" alt="Detalle de la invitación" style="max-width:90%; border-radius:12px;">
+    </div>
+  </section>
+
+  <!-- RSVP -->
+  <section>
+    <h2 class="section-title">Confirmación</h2>
+    <div class="content">
+      <a class="btn" href="https://wa.me/528112777755?text=Hola%20Yelena%2C%20confirmo%20mi%20asistencia" target="_blank">Confirmar por WhatsApp</a>
+      <a class="btn secondary" href="tel:+528112777755">Llamar</a>
+      <p class="muted" style="margin-top:1rem">+52 1 8112777755</p>
+    </div>
+  </section>
+
+  <footer style="padding:48px 6vw;text-align:center;color:rgba(0,0,0,0.55);font-style:italic">
+    ¡Te esperamos! — © Miranda - Eventos
+  </footer>
+
+  <script>
+    (function(){
+      const EVENT_DATE = new Date(2026,0,24,18,0,0);
+      const countdownEl = document.getElementById('countdown');
+      let timer = null;
+
+      function two(n){return String(n).padStart(2,'0')}
+
+      function tick(){
+        const now = new Date();
+        let diff = EVENT_DATE - now;
+        if(diff <=0){
+          clearInterval(timer);
+          countdownEl.textContent = "¡Hoy es la gran celebración!";
+          return;
+        }
+        const d = Math.floor(diff/(1000*60*60*24));
+        diff -= d*(1000*60*60*24);
+        const h = Math.floor(diff/(1000*60*60));
+        diff -= h*(1000*60*60);
+        const m = Math.floor(diff/(1000*60));
+        diff -= m*(1000*60);
+        const s = Math.floor(diff/1000);
+        const parts=[];
+        if(d>0) parts.push(`${d} ${d===1?'día':'días'}`);
+        parts.push(`${two(h)}:${two(m)}:${two(s)}`);
+        countdownEl.textContent = parts.join(" · ");
+      }
+      tick();
+      timer = setInterval(tick,1000);
+
+      // Scroll reveal
+      const items = document.querySelectorAll('.container-card, h2.section-title, .hero-inner, .timeline-item');
+      const obs = new IntersectionObserver((entries,o)=>{
+        entries.forEach(e=>{
+          if(e.isIntersecting){
+            e.target.style.transition="opacity .9s ease, transform .9s ease";
+            e.target.style.opacity=1;
+            e.target.style.transform="translateY(0)";
+            o.unobserve(e.target);
+          }
+        })
+      },{threshold:0.08});
+      items.forEach(el=>{
+        el.style.opacity=0;
+        el.style.transform=`translateY(var(--fadeOffset))`;
+        obs.observe(el);
+      });
+
+      // Audio play
+      const audio = document.getElementById('audio');
+      const playBtn = document.getElementById('playBtn');
+      const playIcon = document.getElementById('playIcon');
+      playBtn.addEventListener('click', () => {
+        if(audio.paused){
+          audio.play();
+          playIcon.src = "pause.png";
+        } else {
+          audio.pause();
+          playIcon.src = "play.png";
+        }
+      });
+
+    })();
+  </script>
+
+</body>
+</html>
+
+
