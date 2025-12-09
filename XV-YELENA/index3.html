@@ -5,67 +5,96 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>XV de Yelena — Invitación</title>
 
-  <!-- Tipografía cursiva elegante -->
+  <!-- Tipografías -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400;1,600;1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
 :root{
-  /* 🎨 Paleta morado + turquesa más elegante */
-  --crema:#F8F3FF;        /* Fondo lila muy claro */
-  --beige:#EDE7FF;        /* Lila pastel */
-  --cafe:#6C4BC7;         /* Morado principal */
-  --negro-suave:#291B4A;  /* Morado muy oscuro */
-  --dorado:#54D2C4;       /* Turquesa acento */
-  --text: var(--negro-suave);
-  --fadeOffset: 80px;
+  /* 🎨 Paleta morado + turquesa moderna y suave */
+  --fondo-claro:#F6F3FF;       /* Lila muy suave */
+  --fondo-claro-2:#EAF8FF;     /* Turquesa pastel muy claro */
+  --morado:#6F56D9;            /* Morado principal */
+  --morado-oscuro:#2E244A;     /* Morado profundo */
+  --turquesa:#3BD0C6;          /* Turquesa acento */
+  --turquesa-suave:#CFF7F4;    /* Turquesa muy suave */
+  --texto-principal:#2E244A;
+  --texto-claro:#FFFFFF;
+  --texto-muted:#6E6A86;
+  --fadeOffset: 60px;
 }
 
-*{box-sizing:border-box;}
+*{box-sizing:border-box; margin:0; padding:0;}
+
 html, body{
-  height:100%; margin:0; 
-  font-family:'Playfair Display', serif; 
-  font-style:italic; 
-  color:var(--text);
-  background: url('fondo.jpg') center/cover no-repeat fixed;
+  height:100%;
+  font-family:'Poppins', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  color:var(--texto-principal);
+  background: radial-gradient(circle at top, var(--fondo-claro) 0, var(--fondo-claro-2) 45%, #FFFFFF 100%);
   overflow-x:hidden;
+}
+
+/* Contenedor general para que no se vea gigante en escritorio */
+.page{
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
 /* HERO */
 .hero{
-  height:100vh; width:100%;
+  min-height: 100vh;
+  width:100%;
   position:relative;
-  display:flex; flex-direction:column;
-  align-items:center; justify-content:center;
+  display:flex;
+  align-items:center;
+  justify-content:center;
   text-align:center;
-  color:#FFFFFF;
+  color:var(--texto-claro);
   background: center/cover no-repeat url('xvanera.jpeg');
 }
+
 .hero::before{
   content:"";
   position:absolute; inset:0;
-  /* Degradado morado con toque turquesa muy sutil */
-  background: linear-gradient(
-    to bottom,
-    rgba(41,27,74,0.80),
-    rgba(108,75,199,0.40)
-  );
+  background: radial-gradient(circle at top, rgba(111,86,217,0.92), rgba(46,36,74,0.92));
+  mix-blend-mode:multiply;
 }
-.hero-inner{position:relative; z-index:2; padding:1.5rem;}
+
+.hero-inner{
+  position:relative;
+  z-index:2;
+  padding:2rem 1.5rem;
+  max-width: 900px;
+}
+
 .title-large{
-  font-size:clamp(64px,10vw,120px); 
-  margin:0; 
-  text-shadow:0 12px 30px rgba(0,0,0,0.55);
-}
-.subtitle{margin-top:0.8rem; font-size:clamp(22px,3vw,32px);}
-.date-pill{
-  margin-top:1rem;
-  display:inline-block;
-  background: rgba(108,75,199,0.75); /* morado */
-  color:#FFFFFF;
-  border-radius:999px;
-  padding:0.6rem 1.2rem;
+  font-family:'Playfair Display', serif;
+  font-style:italic;
   font-weight:600;
-  font-size:clamp(18px,2.5vw,24px);
+  letter-spacing:0.03em;
+  font-size:clamp(32px,4vw,54px); /* más controlado en escritorio */
+  margin:0;
+  text-shadow:0 10px 28px rgba(0,0,0,0.55);
+}
+
+.subtitle{
+  margin-top:0.75rem;
+  font-size:clamp(18px,2.6vw,26px);
+  font-weight:400;
+}
+
+.date-pill{
+  margin-top:1.3rem;
+  display:inline-flex;
+  align-items:center;
+  gap:0.6rem;
+  background: linear-gradient(90deg, var(--morado), var(--turquesa));
+  color:var(--texto-claro);
+  border-radius:999px;
+  padding:0.55rem 1.4rem;
+  font-weight:500;
+  font-size:clamp(15px,1.9vw,18px);
+  box-shadow:0 6px 18px rgba(0,0,0,0.35);
 }
 
 /* BOTÓN DE AUDIO */
@@ -76,119 +105,131 @@ html, body{
 }
 
 .play-btn{
-  background: rgba(84,210,196,0.95);  /* turquesa acento */
+  background: #FFFFFF;
   border:none;
   border-radius:50%;
-  width:60px;
-  height:60px;
+  width:58px;
+  height:58px;
   display:flex;
   justify-content:center;
   align-items:center;
   cursor:pointer;
-  transition: transform 0.2s, box-shadow 0.2s;
-  box-shadow:0 4px 18px rgba(0,0,0,0.35);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+  box-shadow:0 6px 20px rgba(0,0,0,0.35);
 }
 .play-btn:hover{
-  transform: scale(1.07);
-  box-shadow:0 6px 24px rgba(0,0,0,0.45);
+  transform: translateY(-2px) scale(1.03);
+  box-shadow:0 10px 26px rgba(0,0,0,0.45);
+  background: var(--turquesa-suave);
 }
-.play-btn img{width:28px;height:28px;}
+.play-btn img{width:26px;height:26px;}
 
 /* SECCIONES */
 section{
-  width:100%; 
-  padding:64px 6vw; 
-  text-align:center;
-  background: radial-gradient(circle at top, #F8F3FF 0, #EDE7FF 35%, #F8F3FF 100%);
+  width:100%;
+  padding:60px 1.5rem;
 }
-.container-card{
-  max-width:980px;
-  margin:0 auto;
-
-  /* Cristal suave lila */
-  background: rgba(255,255,255,0.16);
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
-
-  padding:2.2rem;
-  border-radius:18px;
-
-  border:1px solid rgba(255,255,255,0.55);
-
-  box-shadow: 
-      0 4px 12px rgba(0,0,0,0.10),
-      0 0 25px rgba(108,75,199,0.32);
+.section-inner{
+  max-width: 900px;
+  margin: 0 auto;
 }
+
 h2.section-title{
-  font-size:clamp(36px,5vw,54px);
-  color:var(--cafe);
+  font-family:'Playfair Display', serif;
+  font-style:italic;
+  font-size:clamp(26px,3vw,36px);
+  color:var(--morado-oscuro);
   margin-bottom:1rem;
 }
+
+/* Cards tipo cristal */
+.container-card{
+  width:100%;
+  margin:0 auto;
+  background: rgba(255,255,255,0.80);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  padding:1.8rem 1.8rem;
+  border-radius:18px;
+  border:1px solid rgba(255,255,255,0.9);
+  box-shadow: 
+      0 3px 10px rgba(0,0,0,0.08),
+      0 0 22px rgba(111,86,217,0.16);
+}
+
 p.lead{
-  font-size:1.6rem; 
-  line-height:2.0;
-  color: var(--negro-suave);
+  font-size:1.15rem;
+  line-height:1.9;
+  color:var(--texto-principal);
 }
 .muted{
-  color:rgba(0,0,0,0.60); 
-  font-size:1.2rem;
+  color:var(--texto-muted);
+  font-size:0.95rem;
 }
 
 /* BOTONES */
 .btn{
-  display:inline-block;
-  padding:14px 24px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:12px 22px;
   border-radius:999px;
-  background:linear-gradient(90deg, var(--cafe), var(--dorado));
+  background:linear-gradient(90deg, var(--morado), var(--turquesa));
   color:#FFFFFF;
   text-decoration:none;
-  font-weight:600;
-  font-size:1.2rem;
-  transition: transform .22s ease, box-shadow .22s ease;
-  margin-top:0.5rem;
-  box-shadow:0 4px 16px rgba(0,0,0,0.25);
+  font-weight:500;
+  font-size:1rem;
+  transition: transform .18s ease, box-shadow .18s ease, filter .18s ease;
+  margin-top:0.4rem;
+  box-shadow:0 4px 16px rgba(0,0,0,0.20);
 }
 .btn:hover{
-  transform:translateY(-3px);
-  box-shadow:0 6px 22px rgba(0,0,0,0.35);
+  transform:translateY(-2px);
+  box-shadow:0 7px 20px rgba(0,0,0,0.30);
+  filter:brightness(1.05);
 }
 .btn.secondary{
-  background:transparent;
-  color:var(--cafe);
-  border:1px solid rgba(108,75,199,0.55);
+  background:#FFFFFF;
+  color:var(--morado);
+  border:1px solid rgba(111,86,217,0.3);
   box-shadow:none;
+}
+.btn.secondary:hover{
+  box-shadow:0 4px 12px rgba(0,0,0,0.12);
 }
 
 /* CONTADOR */
 #countdown{
-  font-size:clamp(48px,8vw,100px);
-  font-weight:700;
-  margin-top:12px;
-  animation: pulse 1.5s infinite alternate;
+  font-size:clamp(28px,4vw,40px);
+  font-weight:600;
+  margin-top:14px;
+  color:var(--morado-oscuro);
+  animation: pulse 1.6s infinite alternate;
 }
 
 @keyframes pulse {
-  0% { transform: scale(1); color: var(--cafe);}
-  50% { transform: scale(1.05); color: var(--dorado);}
-  100% { transform: scale(1); color: var(--cafe);}
+  0% { transform: scale(1); color: var(--morado-oscuro);}
+  50% { transform: scale(1.03); color: var(--turquesa);}
+  100% { transform: scale(1); color: var(--morado-oscuro);}
 }
 
 /* TIMELINE */
 .timeline{
   position: relative;
-  margin: 2rem 0;
+  margin: 2rem auto 0;
   padding: 0;
+  max-width: 900px;
 }
 .timeline::before{
   content: '';
   position: absolute;
-  top: 20px;
+  top: 24px;
   bottom: 0;
   left: 50%;
-  width: 4px;
-  background: linear-gradient(to bottom, var(--cafe), var(--dorado));
+  width: 3px;
+  background: linear-gradient(to bottom, var(--morado), var(--turquesa));
   transform: translateX(-50%);
-  border-radius:2px;
+  border-radius:999px;
 }
 
 .timeline-item{
@@ -214,52 +255,84 @@ p.lead{
   display:flex;
   align-items:center;
   justify-content:center;
-  background: var(--cafe);
+  background: #FFFFFF;
   border-radius: 50%;
   box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  border:2px solid var(--morado);
 }
 .timeline-item .icon img{
   width: 60%; 
   height: 60%;
 }
 .timeline-item .content{
-  background: rgba(255,255,255,0.16);
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
-
+  background: rgba(255,255,255,0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border-radius:16px;
-  padding:1.2rem 1.6rem;
-
-  border:1px solid rgba(255,255,255,0.55);
-
+  padding:1.1rem 1.5rem;
+  border:1px solid rgba(255,255,255,0.95);
   box-shadow:
-      0 4px 12px rgba(0,0,0,0.10),
-      0 0 22px rgba(108,75,199,0.28);
+      0 3px 10px rgba(0,0,0,0.08),
+      0 0 18px rgba(111,86,217,0.18);
+}
+
+/* Imágenes dentro de secciones */
+section img{
+  max-width:100%;
+  border-radius:14px;
+  display:block;
+  margin: 0.75rem auto 0;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .hero{
+    min-height: 88vh;
+  }
+  .hero-inner{
+    padding:2.5rem 1.2rem;
+  }
 }
 
 @media(max-width:720px){
-  .title-large{font-size:clamp(48px,12vw,72px);}
-  .subtitle{font-size:clamp(18px,4vw,24px);}
-  section{padding:40px 6vw;}
-  p.lead{font-size:1.4rem;}
-  #countdown{font-size:clamp(36px,6vw,80px);}
-  .timeline::before{left:8px;}
+  section{
+    padding:42px 1.3rem;
+  }
+  .timeline::before{left:10px;}
   .timeline-item{
     width:100%;
-    padding-left:40px; padding-right:0;
+    padding-left:38px; 
+    padding-right:0;
   }
-  .timeline-item.left, .timeline-item.right{text-align:left; left:0;}
-  .timeline-item .icon{left:0;}
+  .timeline-item.left, 
+  .timeline-item.right{
+    text-align:left; 
+    left:0;
+  }
+  .timeline-item .icon{left:10px;}
+  .container-card{
+    padding:1.5rem 1.3rem;
+  }
 }
 
-
+/* Animación de aparición suave */
+.reveal{
+  opacity:0;
+  transform:translateY(var(--fadeOffset));
+  transition:opacity .8s ease, transform .8s ease;
+}
+.reveal.visible{
+  opacity:1;
+  transform:translateY(0);
+}
 </style>
 </head>
 <body>
+<div class="page">
 
   <!-- HERO -->
   <header class="hero">
-    <div class="hero-inner">
+    <div class="hero-inner reveal">
       <h1 class="title-large">Yelena Maria Capetillo Castillo</h1>
       <div class="subtitle">Mis XV Años</div>
       <div class="date-pill">24 · Enero · 2026 — 6:00 PM</div>
@@ -271,62 +344,73 @@ p.lead{
         </button>
         <audio id="audio" src="cancion.mp3"></audio>
       </div>
-
     </div>
   </header>
 
   <!-- MENSAJE -->
   <section>
-    <h2 class="section-title" style="color: black;">Tienes una invitación muy especial</h2>
-    <p>¡Solo Faltan!</p>
-    <div class="audio-container">
-      
-    <p id="countdown">Cargando…</p>
-     <img src="separador.png" alt="Detalle de la invitación" style="max-width:90%; border-radius:12px;">
-    </div>
-    <div class="container-card">
-      <p class="lead" style="font-size:1.4rem; color:var(--cafe); text-align: center;">
-        "Hoy hace 15 años mis padres daban gracias a Dios por mi, hoy doy gracias a Dios por mis padres, familia y amigos."
-      </p>
+    <div class="section-inner reveal">
+      <h2 class="section-title">Tienes una invitación muy especial</h2>
+      <p>¡Solo faltan!</p>
+      <p id="countdown">Cargando…</p>
+      <img src="separador.png" alt="Detalle de la invitación">
+      <div class="container-card" style="margin-top:1.5rem;">
+        <p class="lead" style="text-align:center;">
+          "Hoy hace 15 años mis padres daban gracias a Dios por mi, hoy doy gracias a Dios por mis padres, familia y amigos."
+        </p>
+      </div>
     </div>
   </section>
 
   <!-- IMAGEN DESPUÉS DEL CONTADOR -->
   <section>
-    <img src="detalle.png" alt="Detalle de la invitación" style="max-width:90%; border-radius:12px;">
+    <div class="section-inner reveal">
+      <img src="detalle.png" alt="Detalle de la invitación">
+    </div>
   </section>
 
   <!-- EVENTO -->
   <section>
-    <h2 class="section-title">Mis Padres</h2>
-    <div class="container-card">
-      <p class="lead">Ángel Omar Capetillo Ramirez <br> &amp; <br> Olga Lizzette Castillo Lopez</p>
-      <p class="muted" style="margin-top:0.6rem;font-weight:600">Tenemos el honor de invitarles a la celebración de los XV años de nuestra hija</p>
+    <div class="section-inner reveal">
+      <h2 class="section-title">Mis Padres</h2>
+      <div class="container-card">
+        <p class="lead" style="text-align:center;">
+          Ángel Omar Capetillo Ramirez <br> &amp; <br> Olga Lizzette Castillo Lopez
+        </p>
+        <p class="muted" style="margin-top:0.6rem;font-weight:500; text-align:center;">
+          Tenemos el honor de invitarles a la celebración de los XV años de nuestra hija
+        </p>
+      </div>
     </div>
   </section>
-    <section>
-    <img src="fecha.png" alt="Detalle de la invitación" style="max-width:90%; border-radius:12px;">
+
+  <section>
+    <div class="section-inner reveal">
+      <img src="fecha.png" alt="Detalle de la invitación">
+    </div>
   </section>
 
   <!-- TIMELINE DE LUGARES -->
   <section>
-    <h2 class="section-title">Ceremonia & Recepción</h2>
-    <div class="timeline">
-      <div class="timeline-item left">
-        <div class="icon"><img src="church.png" alt="Iglesia"></div>
-        <div class="content">
-          <p class="lead"><strong>Ceremonia</strong> — 6:00 p.m.<br>
-          <span class="muted">Coronación de la virgen del roble, 25 Diciembre #499, Col. El Roble, San Nicolas de los Garza, N.L.</span><br>
-          <a class="btn secondary" href="https://maps.app.goo.gl/QLS9PonWSc3J7bFy5">Ver en Google Maps</a></p>
+    <div class="section-inner reveal">
+      <h2 class="section-title">Ceremonia &amp; Recepción</h2>
+      <div class="timeline">
+        <div class="timeline-item left">
+          <div class="icon"><img src="church.png" alt="Iglesia"></div>
+          <div class="content">
+            <p class="lead"><strong>Ceremonia</strong> — 6:00 p.m.<br>
+            <span class="muted">Coronación de la virgen del roble, 25 Diciembre #499, Col. El Roble, San Nicolas de los Garza, N.L.</span><br>
+            <a class="btn secondary" href="https://maps.app.goo.gl/QLS9PonWSc3J7bFy5">Ver en Google Maps</a></p>
+          </div>
         </div>
-      </div>
 
-      <div class="timeline-item right">
-        <div class="icon"><img src="gift.png" alt="Recepción"></div>
-        <div class="content">
-          <p class="lead"><strong>Recepción</strong> — 8:00 p.m.<br>
-          <span class="muted">San Nicolas Eventos Ignacio Aldama #508, Centro de San Nicolas, N.L.</span><br>
-          <a class="btn secondary" href="https://maps.app.goo.gl/4LXSwdbenBG65T3G6">Ver en Google Maps</a></p>
+        <div class="timeline-item right">
+          <div class="icon"><img src="gift.png" alt="Recepción"></div>
+          <div class="content">
+            <p class="lead"><strong>Recepción</strong> — 8:00 p.m.<br>
+            <span class="muted">San Nicolas Eventos Ignacio Aldama #508, Centro de San Nicolas, N.L.</span><br>
+            <a class="btn secondary" href="https://maps.app.goo.gl/4LXSwdbenBG65T3G6">Ver en Google Maps</a></p>
+          </div>
         </div>
       </div>
     </div>
@@ -334,93 +418,93 @@ p.lead{
 
   <!-- VESTIMENTA -->
   <section>
-    <h2 class="section-title">Código de Vestimenta</h2>
-    <div class="container-card">
-      <p class="lead"><strong>Formal</strong></p>
-      <img src="vestimenta.png" alt="Detalle de la invitación" style="max-width:90%; border-radius:12px;">
+    <div class="section-inner reveal">
+      <h2 class="section-title">Código de Vestimenta</h2>
+      <div class="container-card" style="text-align:center;">
+        <p class="lead"><strong>Formal</strong></p>
+        <img src="vestimenta.png" alt="Detalle de la invitación">
+      </div>
     </div>
   </section>
 
   <!-- RSVP -->
   <section>
-    <h2 class="section-title">Confirmación</h2>
-    <div class="content">
-      <a class="btn" href="https://wa.me/528112777755?text=Hola%20Yelena%2C%20confirmo%20mi%20asistencia" target="_blank">Confirmar por WhatsApp</a>
-      <a class="btn secondary" href="tel:+528112777755">Llamar</a>
-      <p class="muted" style="margin-top:1rem">+52 1 8112777755</p>
+    <div class="section-inner reveal" style="text-align:center;">
+      <h2 class="section-title">Confirmación</h2>
+      <div class="content">
+        <a class="btn" href="https://wa.me/528112777755?text=Hola%20Yelena%2C%20confirmo%20mi%20asistencia" target="_blank">Confirmar por WhatsApp</a>
+        <a class="btn secondary" href="tel:+528112777755">Llamar</a>
+        <p class="muted" style="margin-top:1rem">+52 1 8112777755</p>
+      </div>
     </div>
   </section>
 
-  <footer style="padding:48px 6vw;text-align:center;color:rgba(0,0,0,0.55);font-style:italic">
+  <footer style="padding:36px 1.5rem 46px;text-align:center;color:var(--texto-muted);font-style:italic;font-size:0.9rem">
     ¡Te esperamos! — © Miranda - Eventos
   </footer>
 
-  <script>
-    (function(){
-      const EVENT_DATE = new Date(2026,0,24,18,0,0);
-      const countdownEl = document.getElementById('countdown');
-      let timer = null;
+</div>
 
-      function two(n){return String(n).padStart(2,'0')}
+<script>
+(function(){
+  const EVENT_DATE = new Date(2026,0,24,18,0,0);
+  const countdownEl = document.getElementById('countdown');
+  let timer = null;
 
-      function tick(){
-        const now = new Date();
-        let diff = EVENT_DATE - now;
-        if(diff <=0){
-          clearInterval(timer);
-          countdownEl.textContent = "¡Hoy es la gran celebración!";
-          return;
-        }
-        const d = Math.floor(diff/(1000*60*60*24));
-        diff -= d*(1000*60*60*24);
-        const h = Math.floor(diff/(1000*60*60));
-        diff -= h*(1000*60*60);
-        const m = Math.floor(diff/(1000*60));
-        diff -= m*(1000*60);
-        const s = Math.floor(diff/1000);
-        const parts=[];
-        if(d>0) parts.push(`${d} ${d===1?'día':'días'}`);
-        parts.push(`${two(h)}:${two(m)}:${two(s)}`);
-        countdownEl.textContent = parts.join(" · ");
+  function two(n){return String(n).padStart(2,'0')}
+
+  function tick(){
+    const now = new Date();
+    let diff = EVENT_DATE - now;
+    if(diff <=0){
+      clearInterval(timer);
+      countdownEl.textContent = "¡Hoy es la gran celebración!";
+      return;
+    }
+    const d = Math.floor(diff/(1000*60*60*24));
+    diff -= d*(1000*60*60*24);
+    const h = Math.floor(diff/(1000*60*60));
+    diff -= h*(1000*60*60);
+    const m = Math.floor(diff/(1000*60));
+    diff -= m*(1000*60);
+    const s = Math.floor(diff/1000);
+    const parts=[];
+    if(d>0) parts.push(`${d} ${d===1?'día':'días'}`);
+    parts.push(`${two(h)}:${two(m)}:${two(s)}`);
+    countdownEl.textContent = parts.join(" · ");
+  }
+  tick();
+  timer = setInterval(tick,1000);
+
+  // Animación reveal
+  const items = document.querySelectorAll('.reveal');
+  const obs = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        e.target.classList.add('visible');
+        obs.unobserve(e.target);
       }
-      tick();
-      timer = setInterval(tick,1000);
+    });
+  },{threshold:0.12});
+  items.forEach(el=>obs.observe(el));
 
-      // Scroll reveal
-      const items = document.querySelectorAll('.container-card, h2.section-title, .hero-inner, .timeline-item');
-      const obs = new IntersectionObserver((entries,o)=>{
-        entries.forEach(e=>{
-          if(e.isIntersecting){
-            e.target.style.transition="opacity .9s ease, transform .9s ease";
-            e.target.style.opacity=1;
-            e.target.style.transform="translateY(0)";
-            o.unobserve(e.target);
-          }
-        })
-      },{threshold:0.08});
-      items.forEach(el=>{
-        el.style.opacity=0;
-        el.style.transform=`translateY(var(--fadeOffset))`;
-        obs.observe(el);
-      });
-
-      // Audio play
-      const audio = document.getElementById('audio');
-      const playBtn = document.getElementById('playBtn');
-      const playIcon = document.getElementById('playIcon');
-      playBtn.addEventListener('click', () => {
-        if(audio.paused){
-          audio.play();
-          playIcon.src = "pause.png";
-        } else {
-          audio.pause();
-          playIcon.src = "play.png";
-        }
-      });
-
-    })();
-  </script>
+  // Audio play
+  const audio = document.getElementById('audio');
+  const playBtn = document.getElementById('playBtn');
+  const playIcon = document.getElementById('playIcon');
+  if(playBtn && audio && playIcon){
+    playBtn.addEventListener('click', () => {
+      if(audio.paused){
+        audio.play();
+        playIcon.src = "pause.png";
+      } else {
+        audio.pause();
+        playIcon.src = "play.png";
+      }
+    });
+  }
+})();
+</script>
 
 </body>
 </html>
-
