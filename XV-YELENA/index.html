@@ -1,0 +1,671 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>XV de Yelena — Invitación</title>
+
+  <!-- Tipografías -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,500;1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* Paleta femenina y elegante */
+  --fondo-claro:#F8F4FF;
+  --fondo-sec:#FFEAF7;
+  --morado:#7B5CFF;
+  --morado-oscuro:#2B173F;
+  --rosa:#c28cff;
+  --turquesa:#5fb5bd;
+  --texto:#2B173F;
+  --texto-muted:#7C738F;
+  --fadeOffset:42px;
+}
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+/* Fondo general con imagen fija */
+html{
+  height:100%;
+}
+
+body{
+  min-height:100%;
+  font-family:'Poppins', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  color:var(--texto);
+
+  /* 🔥 Fondo fijo */
+  background-image: url("fondo-general.jpg"); /* <-- cambia por tu imagen */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  /* Suavizado con degradado encima del fondo */
+  background-color:#F8F4FF;
+}
+
+/* Fix iOS (no soporta bien background-attachment: fixed) */
+@supports (-webkit-touch-callout: none) {
+  body{
+    background-attachment: scroll;
+  }
+}
+
+.page{
+  max-width: 1100px;
+  margin:0 auto;
+}
+
+/* =============== HERO =============== */
+.hero{
+  position:relative;
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color:#ffffff;
+  overflow:hidden;
+}
+
+/* Foto del hero */
+.hero-media{
+  position:absolute;
+  inset:0;
+  z-index:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#130921;
+}
+.hero-media img{
+  width:100%;
+  height:100%;
+  object-fit:cover;        /* móvil: llena */
+  object-position:center top;
+}
+
+/* En escritorio se ve completa la foto */
+@media (min-width: 992px){
+  .hero-media img{
+    object-fit:contain;    /* escritorio: foto completa */
+    background:#130921;
+  }
+}
+
+/* Capa de color animada encima de la foto */
+.hero-overlay{
+  position:absolute;
+  inset:0;
+  z-index:1;
+
+
+}
+
+.hero-inner{
+  position:relative;
+  z-index:2;
+  max-width:850px;
+  padding:2rem 1.5rem;
+  margin:0 auto;
+}
+
+.title-large{
+  font-family:'Playfair Display', serif;
+  font-style:italic;
+  font-weight:700;
+  letter-spacing:0.04em;
+  font-size:clamp(34px,4vw,56px);
+  text-shadow:0 10px 30px rgba(0,0,0,0.6);
+  opacity:0;
+  transform:translateY(10px);
+}
+
+.subtitle{
+  margin-top:0.7rem;
+  font-size:clamp(18px,2.3vw,24px);
+  font-weight:400;
+  opacity:0;
+  transform:translateY(10px);
+}
+
+.date-pill{
+  margin-top:1.2rem;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:0.5rem;
+  padding:0.6rem 1.6rem;
+  border-radius:999px;
+  background:linear-gradient(90deg, var(--morado), var(--rosa));
+  font-size:clamp(15px,1.8vw,18px);
+  font-weight:500;
+  box-shadow:0 8px 22px rgba(0,0,0,0.4);
+  opacity:0;
+  transform:translateY(10px);
+}
+
+.audio-btn-container{
+  margin-top:22px;
+  display:flex;
+  justify-content:center;
+  opacity:0;
+  transform:translateY(10px);
+}
+
+/* Animaciones del hero (secuencia) */
+.hero.hero-loaded .title-large{
+  animation: fadeDown 0.9s ease-out forwards;
+}
+.hero.hero-loaded .subtitle{
+  animation: fadeUp 0.9s ease-out 0.2s forwards;
+}
+.hero.hero-loaded .date-pill{
+  animation: fadeUp 0.9s ease-out 0.4s forwards,
+             floatSoft 4s ease-in-out 1.3s infinite;
+}
+.hero.hero-loaded .audio-btn-container{
+  animation: fadeUp 0.9s ease-out 0.6s forwards;
+}
+
+/* Botón audio */
+.play-btn{
+  background:#7B5CFF;
+  border:none;
+  border-radius:50%;
+  width:62px;
+  height:62px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  box-shadow:0 8px 24px rgba(0,0,0,0.4);
+  transition:transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+.play-btn:hover{
+  transform:translateY(-2px) scale(1.04);
+  box-shadow:0 10px 28px rgba(0,0,0,0.5);
+  background:#7B5CFF;
+}
+.play-btn img{
+  width:28px;
+  height:28px;
+}
+
+/* =============== SECCIONES =============== */
+section{
+  width:100%;
+  padding:60px 1.5rem;
+}
+
+.section-inner{
+  max-width:900px;
+  margin:0 auto;
+  text-align:center;
+}
+
+h2.section-title{
+  font-family:'Playfair Display', serif;
+  font-style:italic;
+  font-size:clamp(26px,3vw,34px);
+  color:var(--morado-oscuro);
+  margin-bottom:1rem;
+}
+
+/* Tarjetas tipo glass */
+.container-card{
+  background:rgba(255,255,255,0.9);
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+  padding:1.8rem 1.8rem;
+  border-radius:20px;
+  border:1px solid rgba(255,255,255,0.95);
+  box-shadow:
+    0 4px 16px rgba(0,0,0,0.08),
+    0 0 22px rgba(123,92,255,0.18);
+}
+
+p.lead{
+  font-size:1.1rem;
+  line-height:1.9;
+  color:var(--texto);
+}
+.muted{
+  font-size:0.95rem;
+  color:var(--texto-muted);
+}
+
+section img{
+  max-width:100%;
+  border-radius:10px;
+  display:block;
+  margin:0.8rem auto 0;
+}
+
+/* Botones */
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:12px 22px;
+  border-radius:999px;
+  background:linear-gradient(90deg, var(--morado), var(--rosa));
+  color:#ffffff;
+  text-decoration:none;
+  font-weight:500;
+  font-size:1rem;
+  margin-top:0.4rem;
+  box-shadow:0 4px 16px rgba(0,0,0,0.2);
+  transition:transform 0.18s ease, box-shadow 0.18s ease, filter 0.18s ease;
+}
+.btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 7px 20px rgba(0,0,0,0.28);
+  filter:brightness(1.05);
+}
+
+/* Glow suave en el botón principal */
+.btn.main{
+  animation: softGlow 3.5s ease-in-out infinite;
+}
+
+.btn.secondary{
+  background:#ffffff;
+  color:var(--morado);
+  border:1px solid rgba(123,92,255,0.35);
+  box-shadow:none;
+}
+.btn.secondary:hover{
+  box-shadow:0 4px 12px rgba(0,0,0,0.12);
+}
+
+/* Contador */
+#countdown{
+  margin-top:14px;
+  font-size:clamp(26px,3.5vw,34px);
+  font-weight:600;
+  color:var(--morado-oscuro);
+  animation:pulse 1.6s infinite alternate;
+}
+
+/* Timeline */
+.timeline{
+  position:relative;
+  margin:2rem auto 0;
+  padding:0;
+  max-width:900px;
+}
+.timeline::before{
+  content:'';
+  position:absolute;
+  top:24px;
+  bottom:0;
+  left:50%;
+  width:3px;
+  transform:translateX(-50%);
+  background:linear-gradient(to bottom, var(--morado), var(--rosa));
+  border-radius:999px;
+}
+.timeline-item{
+  position:relative;
+  width:50%;
+  padding:1rem 2rem;
+}
+.timeline-item.left{
+  left:0;
+  text-align:right;
+}
+.timeline-item.right{
+  left:50%;
+  text-align:left;
+}
+.timeline-item .icon{
+  position:absolute;
+  top:0;
+  left:50%;
+  transform:translateX(-50%);
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  background:#ffffff;
+  border:2px solid var(--morado);
+  box-shadow:0 4px 12px rgba(0,0,0,0.25);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.timeline-item .icon img{
+  width:60%;
+  height:60%;
+}
+.timeline-item .content{
+  background:rgba(255,255,255,0.95);
+  border-radius:16px;
+  padding:1.1rem 1.4rem;
+  box-shadow:
+    0 3px 10px rgba(0,0,0,0.08),
+    0 0 18px rgba(123,92,255,0.18);
+  border:1px solid rgba(255,255,255,0.95);
+}
+
+/* Responsive */
+@media(max-width:900px){
+  section{
+    padding:46px 1.3rem;
+  }
+}
+
+@media(max-width:720px){
+  .timeline::before{
+    left:10px;
+  }
+  .timeline-item{
+    width:100%;
+    padding-left:38px;
+    padding-right:0;
+  }
+  .timeline-item.left,
+  .timeline-item.right{
+    left:0;
+    text-align:left;
+  }
+  .timeline-item .icon{
+    left:10px;
+  }
+  .container-card{
+    padding:1.5rem 1.3rem;
+  }
+}
+
+/* ===== Aparición en scroll + variantes ===== */
+.reveal{
+  opacity:0;
+  transform:translateY(var(--fadeOffset));
+  transition:
+    opacity .8s ease,
+    transform .8s ease;
+}
+
+/* Direcciones especiales */
+.reveal.from-left{
+  transform:translateX(calc(-1 * var(--fadeOffset)));
+}
+.reveal.from-right{
+  transform:translateX(var(--fadeOffset));
+}
+.reveal.zoom{
+  transform:scale(0.9);
+}
+
+/* Delays */
+.reveal.delay-1{transition-delay:0.12s;}
+.reveal.delay-2{transition-delay:0.22s;}
+.reveal.delay-3{transition-delay:0.32s;}
+.reveal.delay-4{transition-delay:0.42s;}
+
+/* Cuando se ven */
+.reveal.visible{
+  opacity:1;
+  transform:translateY(0);
+}
+.reveal.from-left.visible{
+  transform:translateX(0);
+}
+.reveal.from-right.visible{
+  transform:translateX(0);
+}
+.reveal.zoom.visible{
+  transform:scale(1);
+}
+
+/* KEYFRAMES */
+@keyframes fadeDown{
+  from{opacity:0;transform:translateY(-18px);}
+  to{opacity:1;transform:translateY(0);}
+}
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(18px);}
+  to{opacity:1;transform:translateY(0);}
+}
+@keyframes floatSoft{
+  0%{transform:translateY(0);}
+  50%{transform:translateY(-6px);}
+  100%{transform:translateY(0);}
+}
+@keyframes softGlow{
+  0%{box-shadow:0 4px 16px rgba(0,0,0,0.20);}
+  50%{box-shadow:0 6px 22px rgba(255,140,207,0.55);}
+  100%{box-shadow:0 4px 16px rgba(0,0,0,0.20);}
+}
+@keyframes pulse{
+  0%{transform:scale(1);color:var(--morado-oscuro);}
+  50%{transform:scale(1.03);color:var(--rosa);}
+  100%{transform:scale(1);color:var(--morado-oscuro);}
+}
+@keyframes heroGradient{
+  0%{
+    background:radial-gradient(circle at top,
+      rgba(123,92,255,0.9),
+      rgba(43,23,63,0.96));
+  }
+  100%{
+    background:radial-gradient(circle at 20% 80%,
+      rgba(255,140,207,0.85),
+      rgba(43,23,63,0.98));
+  }
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-media">
+      <img src="xvanera.jpg" alt="Yelena - Sesión de XV Años">
+    </div>
+    <div class="hero-overlay"></div>
+
+    <div class="hero-inner">
+      <h1 class="title-large">Yelena Maria Capetillo Castillo</h1>
+      <div class="subtitle">Mis XV Años</div>
+      <div class="date-pill">24 · Enero · 2026 — 6:00 PM</div>
+
+      <div class="audio-btn-container">
+        <button class="play-btn" id="playBtn">
+          <img src="play.png" alt="Play" id="playIcon">
+        </button>
+        <audio id="audio" src="cancion.mp3"></audio>
+      </div>
+    </div>
+  </header>
+
+  <!-- MENSAJE -->
+  <section>
+    <div class="section-inner reveal delay-1">
+      <h2 class="section-title">Tienes una invitación muy especial</h2>
+      <p class="reveal delay-2">¡Solo faltan!</p>
+      <p id="countdown" class="reveal delay-3">Cargando…</p>
+      <img src="separador.png" alt="Detalle de la invitación"
+           class="reveal zoom delay-4">
+      <div class="container-card reveal delay-2" style="margin-top:1.5rem;">
+        <p class="lead">
+          “Hoy hace 15 años mis padres daban gracias a Dios por mí, hoy doy gracias a Dios por mis padres, familia y amigos.”
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- IMAGEN DESPUÉS DEL CONTADOR -->
+  <section>
+    <div class="section-inner">
+      <img src="detalle.png" alt="Detalle de la invitación"
+           class="reveal zoom">
+    </div>
+  </section>
+
+  <!-- PADRES -->
+  <section>
+    <div class="section-inner">
+      <h2 class="section-title reveal">Mis Padres</h2>
+      <div class="container-card reveal delay-1">
+        <p class="lead reveal delay-2">
+          Ángel Omar Capetillo Ramirez <br>&amp;<br> Olga Lizzette Castillo Lopez
+        </p>
+        <p class="muted reveal delay-3" style="margin-top:0.6rem;">
+          Tenemos el honor de invitarles a la celebración de los XV años de nuestra hija.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FECHA EXTRA -->
+  <section>
+    <div class="section-inner">
+      <img src="fecha.png" alt="Fecha de la celebración"
+           class="reveal zoom">
+    </div>
+  </section>
+
+  <!-- LUGARES -->
+  <section>
+    <div class="section-inner">
+      <h2 class="section-title reveal">Ceremonia &amp; Recepción</h2>
+      <div class="timeline">
+        <div class="timeline-item left reveal from-left delay-1">
+          <div class="icon"><img src="church.png" alt="Iglesia"></div>
+          <div class="content">
+            <p class="lead"><strong>Ceremonia</strong> — 6:00 p.m.<br>
+            <span class="muted">Coronación de la Virgen del Roble, 25 Diciembre #499, Col. El Roble, San Nicolás de los Garza, N.L.</span><br>
+            <a class="btn secondary" href="https://maps.app.goo.gl/QLS9PonWSc3J7bFy5" target="_blank">Ver en Google Maps</a></p>
+          </div>
+        </div>
+
+        <div class="timeline-item right reveal from-right delay-2">
+          <div class="icon"><img src="gift.png" alt="Recepción"></div>
+          <div class="content">
+            <p class="lead"><strong>Recepción</strong> — 8:00 p.m.<br>
+            <span class="muted">San Nicolás Eventos, Ignacio Aldama #508, Centro de San Nicolás, N.L.</span><br>
+            <a class="btn secondary" href="https://maps.app.goo.gl/4LXSwdbenBG65T3G6" target="_blank">Ver en Google Maps</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VESTIMENTA -->
+  <section>
+    <div class="section-inner">
+      <h2 class="section-title reveal">Código de Vestimenta</h2>
+      <div class="container-card reveal delay-1">
+        <p class="lead reveal delay-2"><strong>Formal</strong></p>
+        <img src="vestimenta.png" alt="Código de vestimenta"
+             class="reveal zoom delay-3">
+      </div>
+    </div>
+  </section>
+
+  <!-- CONFIRMACIÓN -->
+  <section>
+    <div class="section-inner">
+      <h2 class="section-title reveal">Confirmación</h2>
+      <div class="reveal delay-1">
+        <a class="btn main" href="https://wa.me/528112777755?text=Hola%20Yelena%2C%20confirmo%20mi%20asistencia" target="_blank">Confirmar por WhatsApp</a>
+      </div>
+      <div class="reveal delay-2">
+        <a class="btn secondary" href="tel:+528112777755">Llamar</a>
+      </div>
+      <p class="muted reveal delay-3" style="margin-top:1rem;">+52 1 811 277 7755</p>
+    </div>
+  </section>
+
+  <footer style="padding:34px 1.5rem 46px;text-align:center;color:var(--texto-muted);font-style:italic;font-size:0.9rem;">
+    ¡Te esperamos! — © Miranda - Eventos
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  const EVENT_DATE = new Date(2026,0,24,18,0,0);
+  const countdownEl = document.getElementById('countdown');
+  let timer = null;
+
+  function two(n){return String(n).padStart(2,'0');}
+
+  function tick(){
+    const now = new Date();
+    let diff = EVENT_DATE - now;
+    if(diff <= 0){
+      clearInterval(timer);
+      if(countdownEl){
+        countdownEl.textContent = "¡Hoy es la gran celebración!";
+      }
+      return;
+    }
+    const d = Math.floor(diff/(1000*60*60*24));
+    diff -= d*(1000*60*60*24);
+    const h = Math.floor(diff/(1000*60*60));
+    diff -= h*(1000*60*60);
+    const m = Math.floor(diff/(1000*60));
+    diff -= m*(1000*60);
+    const s = Math.floor(diff/1000);
+
+    if(countdownEl){
+      const parts = [];
+      if(d>0) parts.push(`${d} ${d===1?'día':'días'}`);
+      parts.push(`${two(h)}:${two(m)}:${two(s)}`);
+      countdownEl.textContent = parts.join(" · ");
+    }
+  }
+  if(countdownEl){
+    tick();
+    timer = setInterval(tick,1000);
+  }
+
+  // Animación de aparición en scroll
+  const items = document.querySelectorAll('.reveal');
+  const obs = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        e.target.classList.add('visible');
+        obs.unobserve(e.target);
+      }
+    });
+  }, {threshold:0.15});
+  items.forEach(el=>obs.observe(el));
+
+  // Hero: marcar como cargado para lanzar las animaciones
+  const hero = document.querySelector('.hero');
+  if(hero){
+    window.addEventListener('load', ()=> {
+      hero.classList.add('hero-loaded');
+    });
+  }
+
+  // Audio play/pause
+  const audio = document.getElementById('audio');
+  const playBtn = document.getElementById('playBtn');
+  const playIcon = document.getElementById('playIcon');
+
+  if(playBtn && audio && playIcon){
+    playBtn.addEventListener('click', ()=>{
+      if(audio.paused){
+        audio.play();
+        playIcon.src = "pause.png";
+      }else{
+        audio.pause();
+        playIcon.src = "play.png";
+      }
+    });
+  }
+})();
+</script>
+
+</body>
+</html>
